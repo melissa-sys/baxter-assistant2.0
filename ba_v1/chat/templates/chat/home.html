@@ -1,0 +1,156 @@
+{% load static %}
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+    
+    <title>Baxter Assistant </title>
+    
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'dist/css/bootstrap.min.css' %}" rel="stylesheet">
+    
+    <!-- Custom styles for this template -->
+    <link href="{% static 'cover.css' %}" rel="stylesheet">
+    
+    <!-- Config especial para el chatbot -->
+    <style>
+        .chatElement {
+            height: 500px;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body class="text-center">
+    <main class= "container">
+        <div class= "row">
+            <div class="cover-container d-flex h-20 p-3 mx-auto flex-column col-lg">
+                <header class="masthead mb-auto">
+                    <div class="inner">
+                        <h1 class="masthead-brand">Baxter Assistant</h1>
+                    </div>
+                    <nav class="nav nav-masthead ">
+                        
+                        <a class="nav-link" href="#">Cosas varias</a>
+                        <a class="nav-link" href="#">Contacto</a>
+                    </nav>
+                </header>
+            </div>
+        </div> 
+        
+        <div class="row">
+            <div class= "col-6">
+                <!-- INSERTAR JS DEL CHATBOT -->
+                <div class="chatElement">
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                    <script>
+                        const element = document.querySelector('.chatElement');
+                        window.watsonAssistantChatOptions = {
+
+                            /*
+                            En caso de necesitar cambiar la conexión con el servicio de Watson Assistant,
+                            solo se debe cambiar el valor de las tres variables que están a continuación.
+                            Se accede desde las "integrations" del WA.
+                            
+                            JUANPA 
+                            integrationID: "4e0c281a-91dc-4a05-b8e7-7f315505a9b2", 
+                            region: "us-south",
+                            serviceInstanceID: "ff665eb2-c524-4780-acb1-ccda0f3a51f3",
+                            
+                            MEL
+                            integrationID: "f94f9040-a6ca-4516-b77a-b70d265304a5", 
+                            region: "us-south", // The region your integration is hosted in.
+                            serviceInstanceID: "566b2572-e1fb-4866-8d2c-c7590a7ee558", 
+                            
+                            */
+
+                            integrationID: "4e0c281a-91dc-4a05-b8e7-7f315505a9b2", //conexión con el WA de Juanpa
+                            region: "us-south",
+                            serviceInstanceID: "ff665eb2-c524-4780-acb1-ccda0f3a51f3",//conexión con el WA de Juanpa
+                            //-------------------CUSTOM-----------------------------------------------
+                            // Provide the custom element.
+                            element: element,
+                            // Hide the close button since we want it always open.
+                            hideCloseButton: true,
+                            // Hide the default launcher.
+                            showLauncher: false,
+                            // Make the window open by default.
+                            openChatByDefault: true,
+                            //-------------------------------------------------------------------------
+
+                            onLoad: function (instance) {
+                                        /*
+                                        Handler functions able the
+                                        */
+                                        
+                                        function handler(event) {                     
+                                        
+                                        var response= event.data.output;
+
+                                        json_response = JSON.stringify(response);// JSON pack
+
+                                        console.log(json_response); 
+
+                                        $.post("chat/home.html", json_response);
+
+                                }
+                                instance.on({ type: "receive", handler: handler });
+                                        // Actually render the web chat.
+                                        instance.render();
+                                    }
+
+                                };
+                                
+
+                                setTimeout(function () { 
+                                    const t = document.createElement('script'); 
+                                    t.src = 'https://web-chat.global.assistant.watson.appdomain.cloud/loadWatsonAssistantChat.js'; 
+                                    document.head.appendChild(t); 
+                                });
+
+                                
+                            </script>
+                            
+                            
+                
+                </div>
+                <!-- END CHATBOT -->
+            </div>
+
+            <div class= "col-6">
+                <div class="card">
+                    <div class="card-header" style="color:black;">
+                        Rutinas preprogramadas
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title" style="color:black;">Seleccionar rutina</h5>
+                        <p class="card-text" style="color:black;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima consectetur, optio repudiandae libero qui reiciendis id odit, saepe asperiores, necessitatibus accusantium cum debitis et non ipsum explicabo vitae tenetur ipsa?</p>
+                        <a href="#" class="btn btn-primary">Ejecutar</a>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+        
+        
+    </main>
+    
+    
+    
+    
+    <!-- Bootstrap core JavaScript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+        <script>window.jQuery || document.write('<script src="{% static 'assets/js/vendor/jquery-slim.min.js' %}"><\/script>')</script>
+        <script src="{% static 'assets/js/vendor/popper.min.js' %}"></script>
+        <script src="{% static 'dist/js/bootstrap.min.js' %}"></script>
+    </body>
+    
+    </html>
