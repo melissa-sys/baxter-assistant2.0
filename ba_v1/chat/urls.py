@@ -14,5 +14,5 @@ app_name = 'chat'
 urlpatterns = [
     path('', HomePage.as_view(), name='home'),
     path('send/', Chat.as_view(), name='send'),
-    path('api/', include(router.urls)),
+    path('api/', include(router.urls), name='api'),
 ]

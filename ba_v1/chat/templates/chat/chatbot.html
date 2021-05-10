@@ -1,4 +1,3 @@
-
 <style>
     .chatElement {
         height: 500px;
@@ -7,27 +6,27 @@
 </style>
 
 <section class="col-lg-7 ">
-<div class="chatElement" id='chat'>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="{$ static 'chat/plugins/summernote/summernote-bs4.min.js' %}"></script>
-    <script>
-        
-        window.watsonAssistantChatOptions = {
-            integrationID: "4e0c281a-91dc-4a05-b8e7-7f315505a9b2", //conexión con el WA de Juanpa
-            region: "us-south",
-            serviceInstanceID: "ff665eb2-c524-4780-acb1-ccda0f3a51f3",//conexión con el WA de Juanpa
-            //-------------------CUSTOM-----------------------------------------------
-            // Provide the custom element.
-            element: element,
-            // Hide the close button since we want it always open.
-            hideCloseButton: true,
-            // Hide the default launcher.
-            showLauncher: false,
-            // Make the window open by default.
-            openChatByDefault: true,
-            //-------------------------------------------------------------------------
+    <div class="chatElement" id='chat'>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="{$ static 'chat/plugins/summernote/summernote-bs4.min.js' %}"></script>
+        <script>
 
-        onLoad: function (instance) {
+            window.watsonAssistantChatOptions = {
+                integrationID: "4e0c281a-91dc-4a05-b8e7-7f315505a9b2", //conexión con el WA de Juanpa
+                region: "us-south",
+                serviceInstanceID: "ff665eb2-c524-4780-acb1-ccda0f3a51f3",//conexión con el WA de Juanpa
+                //-------------------CUSTOM-----------------------------------------------
+                // Provide the custom element.
+                element: element,
+                // Hide the close button since we want it always open.
+                hideCloseButton: true,
+                // Hide the default launcher.
+                showLauncher: false,
+                // Make the window open by default.
+                openChatByDefault: true,
+                //-------------------------------------------------------------------------
+
+                onLoad: function (instance) {
                     function handler(event) {
                         var response = event.data.output;
                         json_response = JSON.stringify(response);// JSON pack 
@@ -56,8 +55,8 @@
                 t.src = 'https://web-chat.global.assistant.watson.appdomain.cloud/loadWatsonAssistantChat.js';
                 document.head.appendChild(t);
             });
-        
 
-    </script>
-</div>
+
+        </script>
+    </div>
 </section>

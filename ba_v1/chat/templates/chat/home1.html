@@ -359,24 +359,22 @@
                                             function handler(event) {
                                                 var response = event.data.output;
                                                 json_response = JSON.stringify(response);// JSON pack 
-                                                // console.log(json_response);
-                                                // for fecth method
-                                                let options = {
-                                                    method: 'POST',
-                                                    headers: {
-                                                        'Content-Type':
-                                                            'application/json;charset=utf-8', 
-                                                            "X-CSRFToken": '{{csrf_token}}',
-                                                    },                                                    
-                                                    data: { 'json': json_response }
-                                                }
-                                                // API URL
-                                                const url= 'http://127.0.0.1:8000/api/message/'
-                                                let fetchResp= fetch(url, options)
-                                                fetchResp.then(res =>
-                                                    res.json()).then(d => {
-                                                        console.log(d)
-                                                });
+                                                console.log(json_response);
+                                                
+                                            $.ajax({
+                                                    headers: { "X-CSRFToken": '{{csrf_token}}' },
+                                                    url: "{% url 'chat:send' %}",
+                                                    data: { 'json': json_response },
+                                                    type: 'POST',
+                                                    success: function (response) {
+                                                        $("#chat").html(response);
+                                                    },
+                                                    error: function (xhr, textStatus, errorThrown) {
+                                                        $("#chat").html(xhr.responseText);
+                                                    }
+                                                })
+
+
                                             }
                                             instance.on({ type: "receive", handler: handler });
                                             // Actually render the web chat.
