@@ -7,8 +7,8 @@ import json
 
 from .models import Message
 
-# from rest_framework.views import APIView
-# from rest_framework.response import Response
+from rest_framework.views import APIView
+from rest_framework.response import Response
 
 from django.views.generic import TemplateView
 
@@ -18,6 +18,18 @@ from django.views.generic import TemplateView
 class HomePage(TemplateView):
     template_name = 'chat/home1.html'
 
+
+# class Chat(APIView):
+
+#     def post(self, request):
+#         i = 0
+#         data = self.request.POST.get('json')
+#         if data != None:
+#             i += 1
+#             print(data)
+#             model = Message.objects.create(message=data, identifier=i)
+#             print ("objeto creado")
+#         return Response({'some': data})
 
 class Chat(TemplateView):
 
