@@ -1,44 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 {% load static %}
+
 <head>
     <link rel="shortcut icon" type="image/png" href="{% static 'dist/img/BA1.png' %}" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>BA2.0 | Inicio</title>
-    
-        <!-- Google Font: Source Sans Pro -->
-        <link rel="stylesheet"
-            href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-        <!-- Font Awesome -->
-        <link rel="stylesheet" href="{% static 'plugins/fontawesome-free/css/all.min.css'%}">
-        <!-- Ionicons -->
-        <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-        
-        <!-- Tempusdominus Bootstrap 4 -->
-        <link rel="stylesheet"
-            href="{% static 'plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css' %}">
-        <!-- iCheck -->
-        <link rel="stylesheet" href="{% static 'plugins/icheck-bootstrap/icheck-bootstrap.min.css' %}">
-        <!-- JQVMap -->
-        <link rel="stylesheet" href="{% static 'plugins/jqvmap/jqvmap.min.css' %}">
-        <!-- Theme style -->
-        <link rel="stylesheet" href="{% static 'dist/css/adminlte.min.css' %}">
-        <!-- overlayScrollbars -->
-        <link rel="stylesheet" href="{% static 'plugins/overlayScrollbars/css/OverlayScrollbars.min.css' %}">
-        <!-- Daterange picker -->
-        <link rel="stylesheet" href="{% static 'plugins/daterangepicker/daterangepicker.css' %}">
-        <!-- summernote -->
-        <link rel="stylesheet" href="{% static 'plugins/summernote/summernote-bs4.min.css' %}">
 
-        <!-- Config especial para el chatbot -->
-        <style>
-            .chatElement {
-                height: 500px;
-                width: 100%;
-            }
-        </style>
-        
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="{% static 'plugins/fontawesome-free/css/all.min.css'%}">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+
+    <!-- Tempusdominus Bootstrap 4 -->
+    <link rel="stylesheet"
+        href="{% static 'plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css' %}">
+    <!-- iCheck -->
+    <link rel="stylesheet" href="{% static 'plugins/icheck-bootstrap/icheck-bootstrap.min.css' %}">
+    <!-- JQVMap -->
+    <link rel="stylesheet" href="{% static 'plugins/jqvmap/jqvmap.min.css' %}">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="{% static 'dist/css/adminlte.min.css' %}">
+    <!-- overlayScrollbars -->
+    <link rel="stylesheet" href="{% static 'plugins/overlayScrollbars/css/OverlayScrollbars.min.css' %}">
+    <!-- Daterange picker -->
+    <link rel="stylesheet" href="{% static 'plugins/daterangepicker/daterangepicker.css' %}">
+    <!-- summernote -->
+    <link rel="stylesheet" href="{% static 'plugins/summernote/summernote-bs4.min.css' %}">
+
+    <!-- Config especial para el chatbot -->
+    <style>
+        .chatElement {
+            height: 500px;
+            width: 100%;
+        }
+    </style>
+
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -57,15 +58,15 @@
                 <li class="nav-item d-none d-sm-inline-block">
                     <a href="#" class="nav-link">Ayuda</a>
                 </li>
-            </ul>            
+            </ul>
             <!-- Right navbar links -->
             <ul class="navbar-nav ml-auto">
-                
+
                 <!-- Notifications Dropdown Menu -->
                 <li class="nav-item dropdown">
                     <a class="nav-link" data-toggle="run" href="#" role="button">
                         <i class="far fa-running"></i>
-                        
+
                     </a>
                 </li>
                 <li class="nav-item">
@@ -126,7 +127,7 @@
                             <a href="#" class="nav-link active">
                                 <i class="nav-icon fas fa-robot"></i>
                                 <p>
-                                    CHATBOT  
+                                    CHATBOT
                                     <i class="right fas fa-angle-left"></i>
                                 </p>
                             </a>
@@ -142,14 +143,14 @@
                                         <i class="far fa-file-archive nav-icon"></i>
                                         <p>BACKLOG</p>
                                     </a>
-                                </li>                            
+                                </li>
                             </ul>
                         </li>
                         <li class="nav-item">
                             <a href="pages/widgets.html" class="nav-link">
                                 <i class="nav-icon fas fa-user"></i>
                                 <p>
-                                    PERFIL                                    
+                                    PERFIL
                                 </p>
                             </a>
                         </li>
@@ -158,7 +159,7 @@
                                 <i class="nav-icon fas fa-running"></i>
                                 <p>
                                     LOGOUT
-                                    
+
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
@@ -212,7 +213,7 @@
                                 </li>
                             </ul>
                         </li>
-                        
+
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->
@@ -317,9 +318,9 @@
                         <section class="col-lg-7 ">
                             <!-- Custom tabs (Charts with tabs)-->
                             <!-- INSERTAR JS DEL CHATBOT -->
-                            <div class="chatElement" id= 'chat'>
+                            <div class="chatElement" id='chat'>
                                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-                                <script src="{$ static 'chat/plugins/summernote/summernote-bs4.min.js' %}"></script>
+
                                 <script>
                                     const element = document.querySelector('.chatElement');
                                     window.watsonAssistantChatOptions = {
@@ -357,11 +358,30 @@
 
                                         onLoad: function (instance) {
                                             function handler(event) {
-                                                var response = event.data.output;
+                                                var response = event.data.output.entities;
+                                                var response_intent = event.data.output.intents;
+                                                var dict = {};
+                                                console.log(event.data.output)
                                                 json_response = JSON.stringify(response);// JSON pack 
-                                                console.log(json_response);
-                                                
-                                            $.ajax({
+                                                json_response_intent = JSON.stringify(response_intent);// JSON pack
+                                                console.log(json_response_intent)
+
+                                                dict['intents'] = json_response_intent;
+
+                                                // Put the object into storage
+                                                localStorage.setItem('response', json_response);
+
+                                                // Retrieve the object from storage
+                                                var retrievedObject = localStorage.getItem('response');
+
+                                                dict['entities'] = json_response;
+                                                var dict_info = JSON.stringify(dict)
+
+                                                console.log(dict_info)
+                                                console.log('retrievedObject: ', JSON.parse(retrievedObject));
+                        // console.log(json_response);
+
+                                                $.ajax({
                                                     headers: { "X-CSRFToken": '{{csrf_token}}' },
                                                     url: "{% url 'chat:send' %}",
                                                     data: { 'json': json_response },
@@ -383,7 +403,7 @@
                                         },
 
                                     }
-                                    
+
 
 
 
@@ -421,43 +441,47 @@
                                         <!-- -------------------------------------------------- -->
                                         <li class="nav-item">
                                             <div id="container">
-                                                <a href="#" data-toggle="modal" data-target="#bannerformodal2" class="nav-link">
+                                                <a href="#" data-toggle="modal" data-target="#bax_home"
+                                                    class="nav-link" id="baxter_home">
                                                     <i class="fas fa-home"></i>
-                                                    HOME                                        
-                                                </a>                                            
-                                            </div>
-                                        </li>
-                                        <!-- --------------------------------------------------- -->
-                                        <li class="nav-item">
-                                            <div id="container">
-                                                <a href="#" data-toggle="modal" data-target="#bannerformodal3" class="nav-link">
-                                                    <i class="fas fa-play-circle"></i>
-                                                    INICIAR                                                    
-                                                </a>                                                
-                                            </div>
-                                        </li>
-                                        <!-- --------------------------------------------------- -->
-                                        <li class="nav-item">
-                                            <div id="container">
-                                                <a href="#" data-toggle="modal" data-target="#bannerformodal1" class="nav-link">
-                                                    <i class="fas fa-save"></i>
-                                                    GUARDAR                                                    
+                                                    HOME
                                                 </a>
-                                                
                                             </div>
                                         </li>
-                                        
+                                        <!-- --------------------------------------------------- -->
+                                        <li class="nav-item">
+                                            <div id="container">
+                                                <a href="#" data-toggle="modal" data-target="#bax_start"
+                                                    class="nav-link" id="baxter_start">
+                                                    <i class="fas fa-play-circle"></i>
+                                                    INICIAR
+                                                </a>
+                                            </div>
+                                        </li>
+                                        <!-- --------------------------------------------------- -->
+                                        <li class="nav-item">
+                                            <div id="container">
+                                                <a href="#" data-toggle="modal" data-target="#bannerformodal1"
+                                                    class="nav-link" id="baxter_save">
+                                                    <i class="fas fa-save"></i>
+                                                    GUARDAR
+                                                </a>
+
+                                            </div>
+                                        </li>
+
                                         <li class="nav-item active">
                                             <div id="container">
-                                                <a href="#" data-toggle="modal" data-target="#bannerformodal" class="nav-link">
+                                                <a href="#" data-toggle="modal" data-target="#bannerformodal"
+                                                    class="nav-link" id="baxter_off">
                                                     <i class="fas fa-power-off"></i>
-                                                    APAGAR                                                    
+                                                    APAGAR
                                                 </a>
-                                                
+
                                             </div>
                                         </li>
                                         <!-- -------------------------------------------------- -->
-                                        
+
                                     </ul>
                                 </div>
                                 <!-- /.card-body -->
@@ -473,7 +497,7 @@
             <!-- /.content -->
         </div>
         <!-- /.content-wrapper -->
-        
+
 
         <!-- Control Sidebar -->
         <aside class="control-sidebar control-sidebar-dark">
@@ -483,7 +507,7 @@
     </div>
     <!-- ./wrapper -->
 
-    
+
 
     <!-- jQuery -->
     <!-- <script src="{& static 'plugins/jquery/jquery.min.js' %}"></script> -->
@@ -515,7 +539,89 @@
     <script src="{% static 'plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js' %}"></script>
     <!-- AdminLTE App -->
     <script src="{% static 'dist/js/adminlte.js' %}"></script>
+
+    <!-- PETICIONES DE JS BOTONES -->
+
+    <script>
+    $(document).ready(function(){
+        $('#baxter_home').on('click', function(){
+            $.ajax({
+                headers: { "X-CSRFToken" : '{{ csrf_token }}' },
+                url: "{% url 'chat:bax_home' %}",
+                data: {'accion': 'iniciar'},
+                type: 'POST',
+                success: function (response) {
+                    alert('successful');
+                },
+                error: function (xhr, textStatus, errorThrown) { 
+                alert('something went wrong');
+            }
+
+        })
+    })
+
+    })
     
+    $(document).ready(function(){
+        $('#baxter_start').on('click', function () {
+            $.ajax({
+                headers: { "X-CSRFToken": '{{ csrf_token }}' },
+                url: "{% url 'chat:bax_home' %}",
+                data: { 'accion': 'set' },
+                type: 'POST',
+                success: function (response) {
+                    alert('successful');
+                },
+                error: function (xhr, textStatus, errorThrown) {
+                    alert('something went wrong');
+                }
+        })
+    })
+
+    })
+    
+    $(document).ready(function(){
+        $('#baxter_save').on('click', function () {
+            $.ajax({
+                headers: { "X-CSRFToken": '{{ csrf_token }}' },
+                url: "{% url 'chat:bax_home' %}",
+                data: { 'accion': 'save' },
+                type: 'POST',
+                success: function (response) {
+                    alert('successful');
+                },
+                error: function (xhr, textStatus, errorThrown) {
+                    alert('something went wrong');
+                }
+        })
+    })
+
+    })
+    
+    $(document).ready(function(){
+        $('#baxter_off').on('click', function () {
+            $.ajax({
+                headers: { "X-CSRFToken": '{{ csrf_token }}' },
+                url: "{% url 'chat:bax_home' %}",
+                data: { 'accion': 'apagar' },
+                type: 'POST',
+                success: function (response) {
+                    alert('successful');
+                },
+                error: function (xhr, textStatus, errorThrown) {
+                    alert('something went wrong');
+                }
+        })
+    })
+
+    })
+
+    // $(document).ready(function () {
+    //     $('#baxter_home').click(function (event) {
+    //         alert("Redirecting you to jQuery.com!");
+    //     });
+    // });
+    </script>
 </body>
 
 </html>

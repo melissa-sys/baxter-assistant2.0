@@ -6,9 +6,6 @@ from jsonfield import JSONField
 
 class Message(models.Model):
     message = JSONField(null=True)
-    identifier = models.CharField(
-        null=True, verbose_name='Identificador', max_length=200)
-
     created = models.DateTimeField(
         auto_now_add=True, verbose_name="Fecha de creación")
     # se ejecuta cada que se ejecuta la instancia
@@ -19,7 +16,6 @@ class Message(models.Model):
         verbose_name = "Mensaje"
         verbose_name_plural = "Mensajes"
         # ordenaré los proyectos desde el más nuevo hasta el más antiguo. (-created)
-        ordering = ["identifier"]
 
     def __str__(self):
         # aquí me da el nombre del proyecto. Self es el contexto.
