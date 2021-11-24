@@ -1,4 +1,5 @@
-from django.shortcuts import render
+#from _typeshed import Self
+from django.shortcuts import redirect, render
 
 from django.http import JsonResponse
 from django.http import HttpResponse
@@ -38,38 +39,6 @@ class HomePage(TemplateView):
 #             print ("objeto creado")
 #         return Response({'some': data})
 
-class Chat(TemplateView):
-
-    template_name = 'chat/chatbot.html'
-
-    def post(self, request):
-        i = 0
-        data = self.request.POST.get('json')
-        data_intents = self.request.POST.get('json_intents')
-        print('aquí está el json')
-
-        if data is None:
-            data_ent = None
-        else:
-            data_ent = json.loads(data)
-
-        if data_intents is None:
-            data_int = None
-        else:
-            data_int = json.loads(data_intents)
-
-        # Creación de diccionario para envío a API
-        dict_info = {}
-        dict_info["intents"] = data_int
-        dict_info["entities"] = data_ent
-
-        print(dict_info)
-
-        if data != None:
-            model = Message.objects.create(message=dict_info)
-            print("objeto creado")
-        return HttpResponseRedirect(reverse_lazy('chat:send'))
-
 
 class SetupBaxter(View):
 
@@ -88,3 +57,37 @@ def messageDelete(request):
     event.delete()
 
     return Response('deleted')
+
+
+def receiveChatInfo(request):
+    i = 0
+    data = request.POST.get('json')
+    data_intents = request.POST.get('json_intents')
+    print('aquí está el json')
+
+    if data is None:
+        data_ent = None
+    else:
+        data_ent = json.loads(data)
+
+    if data_intents is None:
+        data_int = None
+    else:
+        data_int = json.loads(data_intents)
+
+    # Creación de diccionario para envío a API
+    dict_info = {}
+    dict_info["intents"] = data_int
+    dict_info["entities"] = data_ent
+
+    print(dict_info)
+
+    if data != None:
+        model = Message.objects.create(message=dict_info)
+        print("objeto creado")
+
+    return redirect('chat:cosa')
+
+
+class Cosa(TemplateView):
+    template_name = 'chat/cosa.html'

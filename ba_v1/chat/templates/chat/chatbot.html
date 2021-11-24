@@ -51,12 +51,14 @@
                     console.log('retrievedObject: ', JSON.parse(retrievedObject));
                     console.log(typeof json_response);
                     console.log(typeof json_response_intent);
+                    var flag = 1;
 
                     $.ajax({
                         headers: { "X-CSRFToken": '{{csrf_token}}' },
                         url: "{% url 'chat:send' %}",
                         data: { 'json': json_response,
-                                'json_intents': json_response_intent },
+                                'json_intents': json_response_intent,
+                                'flag':flag },
                         type: 'POST',
                         success: function (response) {
                             $("#chat").html(response)

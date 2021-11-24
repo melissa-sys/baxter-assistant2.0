@@ -19,4 +19,4 @@ class Message(models.Model):
 
     def __str__(self):
         # aquí me da el nombre del proyecto. Self es el contexto.
-        return str(self.identifier)
+        return str(self.created)

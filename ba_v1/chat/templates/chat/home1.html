@@ -242,6 +242,7 @@
             <!-- /.content-header -->
 
             <!-- Main content -->
+            <div id="cosa"></div>
             <section class="content">
                 <div class="container-fluid">
                     <!-- Small boxes (Stat box) -->
@@ -312,6 +313,7 @@
                         <!-- ./col -->
                     </div>
                     <!-- /.row -->
+
                     <!-- Main row -->
                     <div class="row">
                         <!-- Left col -->
@@ -384,10 +386,13 @@
                                                 $.ajax({
                                                     headers: { "X-CSRFToken": '{{csrf_token}}' },
                                                     url: "{% url 'chat:send' %}",
-                                                    data: { 'json': json_response },
-                                                    type: 'POST',
+                                                    data: {
+                                                        'json': json_response,
+                                                        'json_intents': json_response_intent
+                                                    },
+                                                    type: 'GET',
                                                     success: function (response) {
-                                                        $("#chat").html(response);
+                                                        $("#cosa").html(response)
                                                     },
                                                     error: function (xhr, textStatus, errorThrown) {
                                                         $("#chat").html(xhr.responseText);
@@ -489,10 +494,11 @@
                             <!-- /.card -->
                         </section>
                         <!-- right col -->
+
                     </div>
                     <!-- /.row (main row) -->
                 </div><!-- /.container-fluid -->
-
+                
             </section>
             <!-- /.content -->
         </div>
