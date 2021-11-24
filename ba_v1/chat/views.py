@@ -23,7 +23,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 class HomePage(TemplateView):
-    template_name = 'chat/home1.html'
+    template_name = 'chat/home.html'
     redirect_field_name = 'redirect_to'
 
 
@@ -86,8 +86,8 @@ def receiveChatInfo(request):
         model = Message.objects.create(message=dict_info)
         print("objeto creado")
 
-    return redirect('chat:cosa')
+    return redirect('chat:importante')
 
 
-class Cosa(TemplateView):
-    template_name = 'chat/cosa.html'
+class Finish(TemplateView):
+    template_name = 'chat/importante.html'

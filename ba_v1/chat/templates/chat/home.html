@@ -242,7 +242,7 @@
             <!-- /.content-header -->
 
             <!-- Main content -->
-            <div id="cosa"></div>
+            
             <section class="content">
                 <div class="container-fluid">
                     <!-- Small boxes (Stat box) -->
@@ -392,7 +392,7 @@
                                                     },
                                                     type: 'POST',
                                                     success: function (response) {
-                                                        $("#cosa").html(response)
+                                                        $("#importante").html(response)
                                                     },
                                                     error: function (xhr, textStatus, errorThrown) {
                                                         $("#chat").html(xhr.responseText);
@@ -492,6 +492,7 @@
                                 <!-- /.card-body -->
                             </div>
                             <!-- /.card -->
+                            <div id="importante"></div>
                         </section>
                         <!-- right col -->
 

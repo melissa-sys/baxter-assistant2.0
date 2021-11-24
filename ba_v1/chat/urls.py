@@ -5,7 +5,7 @@ from . import views
 from .views import HomePage
 #from .views import Chat
 from .views import SetupBaxter
-from .views import Cosa
+from .views import Finish
 #from .views import messageDelete
 from .viewset import MessageViewSet
 
@@ -19,7 +19,7 @@ app_name = 'chat'
 urlpatterns = [
     path('home/', HomePage.as_view(), name='home'),
     path('send/', views.receiveChatInfo, name='send'),
-    path('cosa/', Cosa.as_view(), name='cosa'),
+    path('finish/', Finish.as_view(), name='importante'),
     #path('chat/', Chat.as_view(), name='chat'),
     #path('delete/', messageDelete, name='delete'),
 
