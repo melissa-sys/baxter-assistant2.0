@@ -27,17 +27,8 @@ class HomePage(TemplateView):
     redirect_field_name = 'redirect_to'
 
 
-# class Chat(APIView):
-
-#     def post(self, request):
-#         i = 0
-#         data = self.request.POST.get('json')
-#         if data != None:
-#             i += 1
-#             print(data)
-#             model = Message.objects.create(message=data, identifier=i)
-#             print ("objeto creado")
-#         return Response({'some': data})
+class Finish(TemplateView):
+    template_name = 'chat/importante.html'
 
 
 class SetupBaxter(View):
@@ -46,9 +37,107 @@ class SetupBaxter(View):
         json = request.POST.get('accion', None)
         model = Message.objects.create(message=json)
         print(json)
-        return HttpResponse('Success!')
+        return HttpResponse(model)
 
-    # Método para la eliminación de datos en la api
+# Procesamiento información desde el chatbot
+
+
+def receiveChatInfo(request):
+    i = 0
+    #data = request.POST.get('json')
+    data_generic = request.POST.get('json_generic')
+    print('aquí está el json')
+
+    # if data is None:
+    #     data_ent = None
+    # else:
+    #     data_ent = json.loads(data)
+
+    if data_generic is None:
+        data_gen = None
+    else:
+        data_gen = json.loads(data_generic)
+
+    # Creación de diccionario para envío a API
+    dict_info = {}
+    string_generic = data_gen[0]['text']
+
+    if "Confirmando solicitud:" in string_generic:
+        # Siempre existe una acción.
+        # Acción
+        start = string_generic.find("Acción: </b>") + 12
+        end = string_generic.find("<br>", start)
+        accion = string_generic[start:end]
+
+        if "Parte" in string_generic:
+            # Parte
+            start = string_generic.find("Parte: </b>") + 12
+            end = string_generic.find("<br>", start)
+            parte = string_generic[start:end]
+        else:
+            parte = ""
+
+        if "Objeto" in string_generic:
+            # Objeto
+            start = string_generic.find("Objeto: </b>") + 12
+            end = string_generic.find("<br>", start)
+            objeto = string_generic[start:end]
+        else:
+            objeto = ""
+
+        if "Dirección" in string_generic:
+            # Dirección
+            start = string_generic.find("Dirección: </b>") + 16
+            end = string_generic.find("<br>", start)
+            direccion = string_generic[start:end]
+        else:
+            direccion = ""
+
+        if "Posición" in string_generic:
+            # Posición
+            start = string_generic.find("Posición: </b>") + 14
+            end = string_generic.find("<br>", start)
+            posicion = string_generic[start:end]
+        else:
+            posicion = ""
+
+        if "Cantidad de movimiento" in string_generic:
+            # Cantidad movimientos
+            start = string_generic.find("Cantidad de movimiento: </b>") + 28
+            end = string_generic.find("<br>", start)
+            movimiento = string_generic[start:end]
+        else:
+            movimiento = ""
+
+        if "Articulación" in string_generic:
+            start = string_generic.find("Articulación: </b>") + 19
+            end = string_generic.find("<br>", start)
+            articulacion = string_generic[start:end]
+        else:
+            articulacion = ""
+
+        json_generic = {
+            'accion': accion,
+            'parte': parte,
+            'objeto': objeto,
+            'direccion': direccion,
+            'posicion': posicion,
+            'movimiento': movimiento,
+            'articulacion': articulacion
+        }
+
+    else:
+        json_generic = {}
+
+    print(len(json_generic))
+
+    if len(json_generic) != 0:
+        model = Message.objects.create(message=json_generic)
+        print("objeto creado")
+
+    return redirect('chat:importante')
+
+# Método para la eliminación de datos en la api
 
 
 @api_view(['DELETE'])
@@ -57,37 +146,3 @@ def messageDelete(request):
     event.delete()
 
     return Response('deleted')
-
-
-def receiveChatInfo(request):
-    i = 0
-    data = request.POST.get('json')
-    data_intents = request.POST.get('json_intents')
-    print('aquí está el json')
-
-    if data is None:
-        data_ent = None
-    else:
-        data_ent = json.loads(data)
-
-    if data_intents is None:
-        data_int = None
-    else:
-        data_int = json.loads(data_intents)
-
-    # Creación de diccionario para envío a API
-    dict_info = {}
-    dict_info["intents"] = data_int
-    dict_info["entities"] = data_ent
-
-    print(dict_info)
-
-    if data != None:
-        model = Message.objects.create(message=dict_info)
-        print("objeto creado")
-
-    return redirect('chat:importante')
-
-
-class Finish(TemplateView):
-    template_name = 'chat/importante.html'

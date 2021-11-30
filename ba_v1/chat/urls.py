@@ -3,7 +3,6 @@ from django.urls import include
 
 from . import views
 from .views import HomePage
-#from .views import Chat
 from .views import SetupBaxter
 from .views import Finish
 #from .views import messageDelete
@@ -20,7 +19,6 @@ urlpatterns = [
     path('home/', HomePage.as_view(), name='home'),
     path('send/', views.receiveChatInfo, name='send'),
     path('finish/', Finish.as_view(), name='importante'),
-    #path('chat/', Chat.as_view(), name='chat'),
     #path('delete/', messageDelete, name='delete'),
 
     # Pre-programming baxter actions

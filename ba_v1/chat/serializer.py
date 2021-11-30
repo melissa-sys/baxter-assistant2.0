@@ -8,5 +8,6 @@ from .models import Message
 class ChatSerializer(serializers.ModelSerializer):
 
     class Meta:
+        # Asignación del modelo al serializador para posteo en API
         model = Message
         fields = '__all__'

@@ -39,7 +39,6 @@
             width: 100%;
         }
     </style>
-
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -360,15 +359,19 @@
 
                                         onLoad: function (instance) {
                                             function handler(event) {
+                                                var response_text = event.data.output.generic;
                                                 var response = event.data.output.entities;
-                                                var response_intent = event.data.output.intents;
+                                                //var response_intent = event.data.output.intents;
                                                 var dict = {};
-                                                console.log(event.data.output)
+                                                
+                                                console.log(response_text)
                                                 json_response = JSON.stringify(response);// JSON pack 
-                                                json_response_intent = JSON.stringify(response_intent);// JSON pack
-                                                console.log(json_response_intent)
+                                                //json_response_intent = JSON.stringify(response_intent);// JSON pack
+                                                json_response_generic = JSON.stringify(response_text);// JSON pack
+                                                console.log(json_response_generic)
 
                                                 dict['intents'] = json_response_intent;
+                                                dict['generic'] = json_response_generic;
 
                                                 // Put the object into storage
                                                 localStorage.setItem('response', json_response);
@@ -376,7 +379,7 @@
                                                 // Retrieve the object from storage
                                                 var retrievedObject = localStorage.getItem('response');
 
-                                                dict['entities'] = json_response;
+                                                //dict['entities'] = json_response;
                                                 var dict_info = JSON.stringify(dict)
 
                                                 console.log(dict_info)
@@ -388,7 +391,7 @@
                                                     url: "{% url 'chat:send' %}",
                                                     data: {
                                                         'json': json_response,
-                                                        'json_intents': json_response_intent
+                                                        'json_generic': json_response_generic
                                                     },
                                                     type: 'POST',
                                                     success: function (response) {
@@ -550,6 +553,8 @@
     <!-- PETICIONES DE JS BOTONES -->
 
     <script>
+    //Configuración botones predeterminados
+    //*****************************
     $(document).ready(function(){
         $('#baxter_home').on('click', function(){
             $.ajax({
@@ -558,10 +563,10 @@
                 data: {'accion': 'iniciar'},
                 type: 'POST',
                 success: function (response) {
-                    alert('successful');
+                    alert('¡Ahora estoy yendo a la posición "home"!');
                 },
                 error: function (xhr, textStatus, errorThrown) { 
-                alert('something went wrong');
+                    alert('something went wrong');
             }
 
         })
@@ -577,7 +582,7 @@
                 data: { 'accion': 'set' },
                 type: 'POST',
                 success: function (response) {
-                    alert('successful');
+                    alert('¡Ahora me encenderé!');
                 },
                 error: function (xhr, textStatus, errorThrown) {
                     alert('something went wrong');
@@ -595,7 +600,7 @@
                 data: { 'accion': 'save' },
                 type: 'POST',
                 success: function (response) {
-                    alert('successful');
+                    alert('Programación guardada con éxito');
                 },
                 error: function (xhr, textStatus, errorThrown) {
                     alert('something went wrong');
@@ -613,7 +618,7 @@
                 data: { 'accion': 'apagar' },
                 type: 'POST',
                 success: function (response) {
-                    alert('successful');
+                    alert('¡Hasta la próxima!');
                 },
                 error: function (xhr, textStatus, errorThrown) {
                     alert('something went wrong');
@@ -623,11 +628,8 @@
 
     })
 
-    // $(document).ready(function () {
-    //     $('#baxter_home').click(function (event) {
-    //         alert("Redirecting you to jQuery.com!");
-    //     });
-    // });
+    //*****************************
+
     </script>
 </body>
 
