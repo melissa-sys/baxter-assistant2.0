@@ -370,7 +370,7 @@
                                                 json_response_generic = JSON.stringify(response_text);// JSON pack
                                                 console.log(json_response_generic)
 
-                                                dict['intents'] = json_response_intent;
+                                                //dict['intents'] = json_response_intent;
                                                 dict['generic'] = json_response_generic;
 
                                                 // Put the object into storage
@@ -379,12 +379,11 @@
                                                 // Retrieve the object from storage
                                                 var retrievedObject = localStorage.getItem('response');
 
-                                                //dict['entities'] = json_response;
+                                                dict['entities'] = json_response;
                                                 var dict_info = JSON.stringify(dict)
 
                                                 console.log(dict_info)
                                                 console.log('retrievedObject: ', JSON.parse(retrievedObject));
-                        // console.log(json_response);
 
                                                 $.ajax({
                                                     headers: { "X-CSRFToken": '{{csrf_token}}' },
