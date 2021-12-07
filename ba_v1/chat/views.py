@@ -117,19 +117,19 @@ def receiveChatInfo(request):
             articulacion = ""
 
         json_generic = {
-            'accion': accion,
-            'parte': parte,
-            'objeto': objeto,
-            'direccion': direccion,
-            'posicion': posicion,
-            'movimiento': movimiento,
-            'articulacion': articulacion
+            "accion": accion,
+            "parte": parte,
+            "objeto": objeto,
+            "direccion": direccion,
+            "posicion": posicion,
+            "movimiento": movimiento,
+            "articulacion": articulacion
         }
 
     else:
         json_generic = {}
 
-    print(len(json_generic))
+    print(json_generic)
 
     if len(json_generic) != 0:
         model = Message.objects.create(message=json_generic)
