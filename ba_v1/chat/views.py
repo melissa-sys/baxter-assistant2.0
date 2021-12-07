@@ -103,14 +103,14 @@ def receiveChatInfo(request):
 
         if "Cantidad de movimiento" in string_generic:
             # Cantidad movimientos
-            start = string_generic.find("Cantidad de movimiento: </b>") + 28
+            start = string_generic.find("Cantidad de movimiento: </b>") + 29
             end = string_generic.find("<br>", start)
             movimiento = string_generic[start:end]
         else:
             movimiento = ""
 
         if "Articulación" in string_generic:
-            start = string_generic.find("Articulación: </b>") + 19
+            start = string_generic.find("Articulación: </b>") + 20
             end = string_generic.find("<br>", start)
             articulacion = string_generic[start:end]
         else:
