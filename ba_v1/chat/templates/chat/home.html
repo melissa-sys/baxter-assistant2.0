@@ -558,7 +558,7 @@
         $('#baxter_home').on('click', function(){
             $.ajax({
                 headers: { "X-CSRFToken" : '{{ csrf_token }}' },
-                url: "{% url 'chat:bax_home' %}",
+                url: "{% url 'chat:send_pre' %}",
                 data: {'accion': 'iniciar'},
                 type: 'POST',
                 success: function (response) {
@@ -577,7 +577,7 @@
         $('#baxter_start').on('click', function () {
             $.ajax({
                 headers: { "X-CSRFToken": '{{ csrf_token }}' },
-                url: "{% url 'chat:bax_home' %}",
+                url: "{% url 'chat:send_pre' %}",
                 data: { 'accion': 'set' },
                 type: 'POST',
                 success: function (response) {
@@ -595,7 +595,7 @@
         $('#baxter_save').on('click', function () {
             $.ajax({
                 headers: { "X-CSRFToken": '{{ csrf_token }}' },
-                url: "{% url 'chat:bax_home' %}",
+                url: "{% url 'chat:send_pre' %}",
                 data: { 'accion': 'save' },
                 type: 'POST',
                 success: function (response) {
@@ -613,7 +613,7 @@
         $('#baxter_off').on('click', function () {
             $.ajax({
                 headers: { "X-CSRFToken": '{{ csrf_token }}' },
-                url: "{% url 'chat:bax_home' %}",
+                url: "{% url 'chat:send_pre' %}",
                 data: { 'accion': 'apagar' },
                 type: 'POST',
                 success: function (response) {
