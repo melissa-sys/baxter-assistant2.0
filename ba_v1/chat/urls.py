@@ -18,6 +18,7 @@ app_name = 'chat'
 urlpatterns = [
     path('home/', HomePage.as_view(), name='home'),
     path('send/', views.receiveChatInfo, name='send'),
+    path('send_pre/', views.receiveOrdersInfo, name='send_pre'),
     path('finish/', Finish.as_view(), name='importante'),
     #path('delete/', messageDelete, name='delete'),
 
