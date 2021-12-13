@@ -137,6 +137,24 @@ def receiveChatInfo(request):
 
     return redirect('chat:importante')
 
+
+def receiveOrdersInfo(request):
+    i = 0
+    #data = request.POST.get('json')
+    data_generic = request.POST.get('accion')
+    print('aquí está el json' + data_generic)
+
+    context = {
+        'accion': data_generic
+    }
+    print(context)
+
+    if len(context) != 0:
+        model = Message.objects.create(message=context)
+        print("objeto creado")
+
+    return redirect('chat:importante')
+
 # Método para la eliminación de datos en la api
 
 
