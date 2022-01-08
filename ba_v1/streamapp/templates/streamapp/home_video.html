@@ -26,18 +26,10 @@
     <link rel="stylesheet" href="{% static 'dist/css/adminlte.min.css' %}">
     <!-- overlayScrollbars -->
     <link rel="stylesheet" href="{% static 'plugins/overlayScrollbars/css/OverlayScrollbars.min.css' %}">
-    <!-- Daterange picker -->
-    <link rel="stylesheet" href="{% static 'plugins/daterangepicker/daterangepicker.css' %}">
     <!-- summernote -->
     <link rel="stylesheet" href="{% static 'plugins/summernote/summernote-bs4.min.css' %}">
-
-    <!-- Config especial para el chatbot -->
-    <style>
-        .chatElement {
-            height: 500px;
-            width: 100%;
-        }
-    </style>
+    <!-- Sliders -->
+    <link rel="stylesheet" href="{% static 'plugins/bootstrap-slider/css/bootstrap-slider.min.css' %}">
 </head>
 <body class="hold-transition sidebar-mini layout-fixed" >
     <div class="wrapper">
@@ -117,7 +109,7 @@
                         <!-- Add icons to the links using the .nav-icon class
                        with font-awesome or any other icon font library -->
                         <li class="nav-item menu-open">
-                            <a href="#" class="nav-link active">
+                            <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-robot"></i>
                                 <p>
                                     CHATBOT
@@ -126,7 +118,7 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="./index.html" class="nav-link">
+                                    <a href="./index.html" class="nav-link active">
                                         <i class="fas fa-video nav-icon"></i>
                                         <p>CONTROL VIDEO</p>
                                     </a>
@@ -221,7 +213,7 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0">¡Bienvenido a Baxter Assistant!</h1>
+                            <h1 class="m-0">¡Este es el entorno actual de Baxter!</h1>
                         </div><!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
@@ -230,6 +222,11 @@
                             </ol>
                         </div><!-- /.col -->
                     </div><!-- /.row -->
+                    <div class="row mb-2">
+                        <div class="col-sm-10">
+                            <p>Acá podrás visualizar lo que está en frente de la cámara de Baxter, ubicada en la cabeza del robot. 🤖</p>
+                        </div>
+                    </div>
                 </div><!-- /.container-fluid -->
             </div>
             <!-- /.content-header -->
@@ -242,10 +239,22 @@
                     <div class="row">
                         <!-- Left col -->
                         <section class="col-lg-8 ">
-                            <img src="{% url 'video_feed' %}">
-                            
+                            <img src="{% url 'video_feed' %}">                           
                         </section>
                         <!-- /.Left col -->
+                        <section class="col-lg-4">
+                            <div class="callout callout-danger">
+                                <div class="slider-green">
+                                    <input type="text" value="" class="slider form-control" data-slider-min="-200" data-slider-max="200"
+                                        data-slider-step="5" data-slider-value="[-100,100]" data-slider-orientation="horizontal"
+                                        data-slider-selection="before" data-slider-tooltip="show">
+                                </div>
+                                
+                                <p>.slider-green input.slider</p>
+                                
+                            </div>
+                            
+                        </section>
                     </div>
                     <div class="row">
                         <!-- right col (We are only adding the ID to make the widgets sortable)-->
@@ -282,9 +291,6 @@
     <script src="{% static 'plugins/jqvmap/maps/jquery.vmap.usa.js' %}"></script>
     <!-- jQuery Knob Chart -->
     <script src="{% static 'plugins/jquery-knob/jquery.knob.min.js' %}"></script>
-    <!-- daterangepicker -->
-    <script src="{% static 'plugins/moment/moment.min.js' %}"></script>
-    <script src="{% static 'plugins/daterangepicker/daterangepicker.js' %}"></script>
     <!-- Tempusdominus Bootstrap 4 -->
     <script src="{% static 'plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js' %}"></script>
     <!-- Summernote -->
@@ -293,6 +299,16 @@
     <script src="{% static 'plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js' %}"></script>
     <!-- AdminLTE App -->
     <script src="{% static 'dist/js/adminlte.js' %}"></script>
+    <!-- Bootstrap slider -->
+    <script src="{% static 'plugins/bootstrap-slider/bootstrap-slider.min.js' %}"></script>
+    
+    <script>
+        $(function () {
+                /* BOOTSTRAP SLIDER */
+                $('.slider').bootstrapSlider()
+        })
+    </script>
+
     <!-- <h1>Video Live Stream</h1>
     <img src="{% url 'video_feed' %}">
     <img src="{% url 'webcam_feed' %}"> -->
