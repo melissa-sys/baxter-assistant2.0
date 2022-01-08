@@ -1,3 +1,4 @@
+# Source code https://github.com/sawardekar/Django_VideoStream/blob/master/streamapp/camera.py
 import cv2
 import os
 import urllib.request
