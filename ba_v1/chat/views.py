@@ -45,94 +45,19 @@ class SetupBaxter(View):
 def receiveChatInfo(request):
     i = 0
     #data = request.POST.get('json')
-    data_generic = request.POST.get('json_generic')
+    data_generic = request.POST.get('json')
     print('aquí está el json')
-
-    # if data is None:
-    #     data_ent = None
-    # else:
-    #     data_ent = json.loads(data)
+    print(data_generic)
 
     if data_generic is None:
         data_gen = None
     else:
         data_gen = json.loads(data_generic)
 
-    # Creación de diccionario para envío a API
-    dict_info = {}
-    string_generic = data_gen[0]['text']
+    print(type(data_gen['confirmacion']))
 
-    if "Confirmando solicitud:" in string_generic:
-        # Siempre existe una acción.
-        # Acción
-        start = string_generic.find("Acción: </b>") + 12
-        end = string_generic.find("<br>", start)
-        accion = string_generic[start:end]
-
-        if "Parte" in string_generic:
-            # Parte
-            start = string_generic.find("Parte: </b>") + 12
-            end = string_generic.find("<br>", start)
-            parte = string_generic[start:end]
-        else:
-            parte = ""
-
-        if "Objeto" in string_generic:
-            # Objeto
-            start = string_generic.find("Objeto: </b>") + 12
-            end = string_generic.find("<br>", start)
-            objeto = string_generic[start:end]
-        else:
-            objeto = ""
-
-        if "Dirección" in string_generic:
-            # Dirección
-            start = string_generic.find("Dirección: </b>") + 16
-            end = string_generic.find("<br>", start)
-            direccion = string_generic[start:end]
-        else:
-            direccion = ""
-
-        if "Posición" in string_generic:
-            # Posición
-            start = string_generic.find("Posición: </b>") + 14
-            end = string_generic.find("<br>", start)
-            posicion = string_generic[start:end]
-        else:
-            posicion = ""
-
-        if "Cantidad de movimiento" in string_generic:
-            # Cantidad movimientos
-            start = string_generic.find("Cantidad de movimiento: </b>") + 29
-            end = string_generic.find("<br>", start)
-            movimiento = string_generic[start:end]
-        else:
-            movimiento = ""
-
-        if "Articulación" in string_generic:
-            start = string_generic.find("Articulación: </b>") + 20
-            end = string_generic.find("<br>", start)
-            articulacion = string_generic[start:end]
-        else:
-            articulacion = ""
-
-        json_generic = {
-            "accion": accion,
-            "parte": parte,
-            "objeto": objeto,
-            "direccion": direccion,
-            "posicion": posicion,
-            "movimiento": movimiento,
-            "articulacion": articulacion
-        }
-
-    else:
-        json_generic = {}
-
-    print(json_generic)
-
-    if len(json_generic) != 0:
-        model = Message.objects.create(message=json_generic)
+    if data_gen['confirmacion'] == True:
+        model = Message.objects.create(message=data_gen)
         print("objeto creado")
 
     return redirect('chat:importante')

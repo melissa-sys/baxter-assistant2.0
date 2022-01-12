@@ -359,38 +359,23 @@
 
                                         onLoad: function (instance) {
                                             function handler(event) {
-                                                var response_text = event.data.output.generic;
-                                                var response = event.data.output.entities;
-                                                //var response_intent = event.data.output.intents;
-                                                var dict = {};
+                                                var prueba = event.data.context.skills;
+                                                console.log(prueba)
                                                 
-                                                console.log(response_text)
-                                                json_response = JSON.stringify(response);// JSON pack 
-                                                //json_response_intent = JSON.stringify(response_intent);// JSON pack
-                                                json_response_generic = JSON.stringify(response_text);// JSON pack
-                                                console.log(json_response_generic)
-
-                                                //dict['intents'] = json_response_intent;
-                                                dict['generic'] = json_response_generic;
+                                                str_prueba = JSON.stringify(prueba['main skill']['user_defined']);// JSON pack 
+                                                console.log(str_prueba)
 
                                                 // Put the object into storage
-                                                localStorage.setItem('response', json_response);
+                                                localStorage.setItem('response', str_prueba);
 
                                                 // Retrieve the object from storage
                                                 var retrievedObject = localStorage.getItem('response');
-
-                                                dict['entities'] = json_response;
-                                                var dict_info = JSON.stringify(dict)
-
-                                                console.log(dict_info)
-                                                console.log('retrievedObject: ', JSON.parse(retrievedObject));
-
+                                                
                                                 $.ajax({
                                                     headers: { "X-CSRFToken": '{{csrf_token}}' },
                                                     url: "{% url 'chat:send' %}",
                                                     data: {
-                                                        'json': json_response,
-                                                        'json_generic': json_response_generic
+                                                        'json':str_prueba                                          
                                                     },
                                                     type: 'POST',
                                                     success: function (response) {
@@ -400,8 +385,6 @@
                                                         $("#chat").html(xhr.responseText);
                                                     }
                                                 })
-
-
                                             }
                                             instance.on({ type: "receive", handler: handler });
                                             // Actually render the web chat.
