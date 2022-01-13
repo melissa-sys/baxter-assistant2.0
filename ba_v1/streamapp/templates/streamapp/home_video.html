@@ -14,21 +14,11 @@
     <link rel="stylesheet" href="{% static 'plugins/fontawesome-free/css/all.min.css'%}">
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-
-    <!-- Tempusdominus Bootstrap 4 -->
-    <link rel="stylesheet"
-        href="{% static 'plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css' %}">
-    <!-- iCheck -->
-    <link rel="stylesheet" href="{% static 'plugins/icheck-bootstrap/icheck-bootstrap.min.css' %}">
-    <!-- JQVMap -->
-    <link rel="stylesheet" href="{% static 'plugins/jqvmap/jqvmap.min.css' %}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{% static 'dist/css/adminlte.min.css' %}">
     <!-- overlayScrollbars -->
     <link rel="stylesheet" href="{% static 'plugins/overlayScrollbars/css/OverlayScrollbars.min.css' %}">
-    <!-- summernote -->
-    <link rel="stylesheet" href="{% static 'plugins/summernote/summernote-bs4.min.css' %}">
-    <!-- Sliders -->
+    <!-- bootstrap slider -->
     <link rel="stylesheet" href="{% static 'plugins/bootstrap-slider/css/bootstrap-slider.min.css' %}">
 </head>
 <body class="hold-transition sidebar-mini layout-fixed" >
@@ -244,16 +234,16 @@
                         <!-- /.Left col -->
                         <section class="col-lg-4">
                             <div class="callout callout-danger">
-                                <div class="slider-green">
-                                    <input type="text" value="" class="slider form-control" data-slider-min="-200" data-slider-max="200"
-                                        data-slider-step="5" data-slider-value="[-100,100]" data-slider-orientation="horizontal"
-                                        data-slider-selection="before" data-slider-tooltip="show">
+                                <div class="col-lg-12">
+                                    <div class="slider-red">
+                                        <input type="text" value="" class="slider form-control" data-slider-min="-90" data-slider-max="90"
+                                            data-slider-step="15" data-slider-value="[0,0]" data-slider-orientation="horizontal"
+                                            data-slider-selection="before" data-slider-tooltip="show" style="width: 100%;">
+                                        <br>
+                                        <p>Mover cabeza robot: valores en grados. Siendo referencia el robot, -90° es hacia la izquierda y +90° es hacia la derecha.</p>
+                                    </div>
                                 </div>
-                                
-                                <p>.slider-green input.slider</p>
-                                
                             </div>
-                            
                         </section>
                     </div>
                     <div class="row">
@@ -272,29 +262,12 @@
         <!-- /.content-wrapper -->
     </div>
 
-    <!-- jQuery -->
-    <!-- <script src="{& static 'plugins/jquery/jquery.min.js' %}"></script> -->
     <!-- jQuery UI 1.11.4 -->
-    <script src="{% static 'plugins/jquery-ui/jquery-ui.min.js' %}"></script>
-    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-    <script>
-        $.widget.bridge('uibutton', $.ui.button)
-    </script>
+    <script src="{% static 'plugins/jquery/jquery.min.js' %}"></script>
     <!-- Bootstrap 4 -->
-    <script src="{% static 'plugins/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
-    <!-- ChartJS -->
-    <script src="{% static 'plugins/chart.js/Chart.min.js' %}"></script>
-    <!-- Sparkline -->
-    <script src="{% static  'plugins/sparklines/sparkline.js' %}"></script>
-    <!-- JQVMap -->
-    <script src="{% static 'plugins/jqvmap/jquery.vmap.min.js' %}"></script>
-    <script src="{% static 'plugins/jqvmap/maps/jquery.vmap.usa.js' %}"></script>
+    <script src="{% static 'plugins/bootstrap/js/bootstrap.bundle.min.js' %}"></script>    
     <!-- jQuery Knob Chart -->
     <script src="{% static 'plugins/jquery-knob/jquery.knob.min.js' %}"></script>
-    <!-- Tempusdominus Bootstrap 4 -->
-    <script src="{% static 'plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js' %}"></script>
-    <!-- Summernote -->
-    <!-- <script src="{$ static 'plugins/summernote/summernote-bs4.min.js' %}"></script> -->
     <!-- overlayScrollbars -->
     <script src="{% static 'plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js' %}"></script>
     <!-- AdminLTE App -->
