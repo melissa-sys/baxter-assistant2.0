@@ -54,11 +54,13 @@ def receiveChatInfo(request):
     else:
         data_gen = json.loads(data_generic)
 
-    print(type(data_gen['confirmacion']))
-
-    if data_gen['confirmacion'] == True:
-        model = Message.objects.create(message=data_gen)
-        print("objeto creado")
+    try:
+        if data_gen['confirmacion'] == True:
+            print(type(data_gen['confirmacion']))
+            model = Message.objects.create(message=data_gen)
+            print("objeto creado")
+    except:
+        pass
 
     return redirect('chat:importante')
 
