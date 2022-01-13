@@ -48,11 +48,14 @@ def receiveChatInfo(request):
     data_generic = request.POST.get('json')
     print('aquí está el json')
     print(data_generic)
+    print(type(data_generic))
 
     if data_generic is None:
         data_gen = None
     else:
         data_gen = json.loads(data_generic)
+
+    print(type(data_gen))
 
     try:
         if data_gen['confirmacion'] == True:
@@ -72,7 +75,8 @@ def receiveOrdersInfo(request):
     print('aquí está el json' + data_generic)
 
     context = {
-        'accion': data_generic
+        'accion': data_generic,
+        'confirmacion': True
     }
     print(context)
 

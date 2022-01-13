@@ -579,7 +579,7 @@
             $.ajax({
                 headers: { "X-CSRFToken": '{{ csrf_token }}' },
                 url: "{% url 'chat:send_pre' %}",
-                data: { 'accion': 'save' },
+                data: { 'accion': 'guardar' },
                 type: 'POST',
                 success: function (response) {
                     alert('Programación guardada con éxito');
