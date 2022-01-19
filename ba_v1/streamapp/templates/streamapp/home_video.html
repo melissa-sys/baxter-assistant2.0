@@ -18,8 +18,10 @@
     <link rel="stylesheet" href="{% static 'dist/css/adminlte.min.css' %}">
     <!-- overlayScrollbars -->
     <link rel="stylesheet" href="{% static 'plugins/overlayScrollbars/css/OverlayScrollbars.min.css' %}">
-    <!-- bootstrap slider -->
-    <link rel="stylesheet" href="{% static 'plugins/bootstrap-slider/css/bootstrap-slider.min.css' %}">
+    <!-- Ion Slider -->
+    <link rel="stylesheet" href="{% static 'plugins/ion-rangeslider/css/ion.rangeSlider.min.css' %}">
+    
+    
 </head>
 <body class="hold-transition sidebar-mini layout-fixed" >
     <div class="wrapper">
@@ -234,15 +236,14 @@
                         <!-- /.Left col -->
                         <section class="col-lg-4">
                             <div class="callout callout-danger">
-                                <div class="col-lg-12">
-                                    <div class="slider-red">
-                                        <input type="text" value="" class="slider form-control" data-slider-min="-90" data-slider-max="90"
-                                            data-slider-step="15" data-slider-value="[0,0]" data-slider-orientation="horizontal"
-                                            data-slider-selection="before" data-slider-tooltip="show" style="width: 100%;">
-                                        <br>
-                                        <p>Mover cabeza robot: valores en grados. Siendo referencia el robot, -90° es hacia la izquierda y +90° es hacia la derecha.</p>
-                                    </div>
+                                                                  
+                                <div class="col-sm-12">
+                                    <input id="range_6" type="text" name="range_6" value="">
+                                    <br>
+                                    <p><b>Mover cabeza robot: </b> valores en grados. Siendo referencia el robot, -90° es hacia la izquierda y +90° es hacia la derecha.</p>
                                 </div>
+                                    
+                                
                             </div>
                         </section>
                     </div>
@@ -267,19 +268,48 @@
     <!-- Bootstrap 4 -->
     <script src="{% static 'plugins/bootstrap/js/bootstrap.bundle.min.js' %}"></script>    
     <!-- jQuery Knob Chart -->
-    <script src="{% static 'plugins/jquery-knob/jquery.knob.min.js' %}"></script>
+    <!-- <script src="{% static 'plugins/jquery-knob/jquery.knob.min.js' %}"></script> -->
     <!-- overlayScrollbars -->
     <script src="{% static 'plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js' %}"></script>
     <!-- AdminLTE App -->
     <script src="{% static 'dist/js/adminlte.js' %}"></script>
-    <!-- Bootstrap slider -->
-    <script src="{% static 'plugins/bootstrap-slider/bootstrap-slider.min.js' %}"></script>
+    <!-- Ion Slider -->
+    <script src="{% static 'plugins/ion-rangeslider/js/ion.rangeSlider.min.js' %}"></script>
     
     <script>
         $(function () {
-                /* BOOTSTRAP SLIDER */
-                $('.slider').bootstrapSlider()
-        })
+            $('#range_6').ionRangeSlider({
+                min: -90,
+                max: 90,
+                from: 0,
+                type: 'single',
+                step: 15,
+                postfix: '°',
+                prettify: false,
+                grid: true,
+                onFinish: function (data) {
+                    var datos_slider = data['from'];                   
+                    console.log(datos_slider)
+                    console.log(typeof(datos_slider))
+                    $.ajax({
+                        headers: { "X-CSRFToken": '{{ csrf_token }}' },
+                        url: "{% url 'chat:send_pre' %}",
+                        data: { 'accion' : 'mover',
+                                'direccion': 'mover',
+                                'grados': datos_slider,
+                                'partes': 'cabeza'
+                    },
+                        type: 'POST',
+                        success: function (response) {
+                            alert('¡Ahora moveré mi cabeza!');
+                        },
+                        error: function (xhr, textStatus, errorThrown) {
+                            alert('something went wrong');
+                        }
+                    })
+                },
+            })
+            });
     </script>
 
     <!-- <h1>Video Live Stream</h1>

@@ -33,7 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'chat',
     'login',
-    'streamapp',
+    # 'streamapp',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
