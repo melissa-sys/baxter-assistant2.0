@@ -30,14 +30,14 @@ class VideoCamera(object):
         for (x, y, w, h) in faces_detected:
             cv2.rectangle(image, pt1=(x, y), pt2=(x + w, y + h),
                           color=(255, 0, 0), thickness=2)
-        frame_flip = cv2.flip(image, 1)
+        frame_flip = cv2.flip(image, 1)  # espejo a la imagen
         ret, jpeg = cv2.imencode('.jpg', frame_flip)
         return jpeg.tobytes()
 
 
 class IPWebCam(object):
     def __init__(self):
-        self.url = "http://192.168.1.7:8080/shot.jpg"
+        self.url = "http://192.168.1.6:8080/shot.jpg"
 
     def __del__(self):
         cv2.destroyAllWindows()
