@@ -33,7 +33,7 @@ ALLOWED_HOSTS = ['34.229.118.13', 'localhost', '127.0.0.1']
 INSTALLED_APPS = [
     'chat',
     'login',
-    'streamapp',
+    #'streamapp',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
