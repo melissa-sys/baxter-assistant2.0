@@ -1,332 +1,393 @@
 <!DOCTYPE html>
 <html lang="en">
-{% load static %}
+  {% load static %}
 
-<head>
-    <link rel="shortcut icon" type="image/png" href="{% static 'dist/img/BA1.png' %}" />
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="{% static 'dist/img/BA1.png' %}"
+    />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>BA2.0 | Inicio</title>
 
     <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback"
+    />
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="{% static 'plugins/fontawesome-free/css/all.min.css'%}">
+    <link
+      rel="stylesheet"
+      href="{% static 'plugins/fontawesome-free/css/all.min.css'%}"
+    />
     <!-- Ionicons -->
-    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link
+      rel="stylesheet"
+      href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"
+    />
 
     <!-- Tempusdominus Bootstrap 4 -->
-    <link rel="stylesheet"
-        href="{% static 'plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css' %}">
+    <link
+      rel="stylesheet"
+      href="{% static 'plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css' %}"
+    />
     <!-- iCheck -->
-    <link rel="stylesheet" href="{% static 'plugins/icheck-bootstrap/icheck-bootstrap.min.css' %}">
+    <link
+      rel="stylesheet"
+      href="{% static 'plugins/icheck-bootstrap/icheck-bootstrap.min.css' %}"
+    />
     <!-- JQVMap -->
-    <link rel="stylesheet" href="{% static 'plugins/jqvmap/jqvmap.min.css' %}">
+    <link
+      rel="stylesheet"
+      href="{% static 'plugins/jqvmap/jqvmap.min.css' %}"
+    />
     <!-- Theme style -->
-    <link rel="stylesheet" href="{% static 'dist/css/adminlte.min.css' %}">
+    <link rel="stylesheet" href="{% static 'dist/css/adminlte.min.css' %}" />
     <!-- overlayScrollbars -->
-    <link rel="stylesheet" href="{% static 'plugins/overlayScrollbars/css/OverlayScrollbars.min.css' %}">
+    <link
+      rel="stylesheet"
+      href="{% static 'plugins/overlayScrollbars/css/OverlayScrollbars.min.css' %}"
+    />
     <!-- Daterange picker -->
-    <link rel="stylesheet" href="{% static 'plugins/daterangepicker/daterangepicker.css' %}">
+    <link
+      rel="stylesheet"
+      href="{% static 'plugins/daterangepicker/daterangepicker.css' %}"
+    />
     <!-- summernote -->
-    <link rel="stylesheet" href="{% static 'plugins/summernote/summernote-bs4.min.css' %}">
+    <link
+      rel="stylesheet"
+      href="{% static 'plugins/summernote/summernote-bs4.min.css' %}"
+    />
 
     <!-- Config especial para el chatbot -->
     <style>
-        .chatElement {
-            height: 500px;
-            width: 100%;
-        }
+      .chatElement {
+        height: 500px;
+        width: 100%;
+      }
     </style>
-</head>
+  </head>
 
-<body class="hold-transition sidebar-mini layout-fixed">
+  <body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">
-
-        <!-- Navbar -->
-        <nav class="main-header navbar navbar-expand navbar-white navbar-light">
-            <!-- Left navbar links -->
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
-                </li>
-                <li class="nav-item d-none d-sm-inline-block">
-                    <a href="index3.html" class="nav-link">Inicio</a>
-                </li>
-                <li class="nav-item d-none d-sm-inline-block">
-                    <a href="#" class="nav-link">Ayuda</a>
-                </li>
-            </ul>
-            <!-- Right navbar links -->
-            <ul class="navbar-nav ml-auto">
-
-                <!-- Notifications Dropdown Menu -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link" data-toggle="run" href="#" role="button">
-                        <i class="far fa-running"></i>
-
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" data-widget="fullscreen" href="#" role="button">
-                        <i class="fas fa-expand-arrows-alt"></i>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
-                        <i class="fas fa-th-large"></i>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-        <!-- /.navbar -->
-
-        <!-- Main Sidebar Container -->
-        <aside class="main-sidebar sidebar-dark-primary elevation-4">
-            <!-- Brand Logo -->
-            <a href="index3.html" class="brand-link">
-                <img src="{% static 'dist/img/BA1_fondo.png' %}" class="brand-image img-circle elevation-3"
-                    style="opacity: .8">
-                <span class="brand-text font-weight-light">Baxter Assistant V2.0</span>
+      <!-- Navbar -->
+      <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+        <!-- Left navbar links -->
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" data-widget="pushmenu" href="#" role="button"
+              ><i class="fas fa-bars"></i
+            ></a>
+          </li>
+          <li class="nav-item d-none d-sm-inline-block">
+            <a href="index3.html" class="nav-link">Inicio</a>
+          </li>
+          <li class="nav-item d-none d-sm-inline-block">
+            <a href="#" class="nav-link">Ayuda</a>
+          </li>
+        </ul>
+        <!-- Right navbar links -->
+        <ul class="navbar-nav ml-auto">
+          <!-- Notifications Dropdown Menu -->
+          <li class="nav-item dropdown">
+            <a class="nav-link" data-toggle="run" href="#" role="button">
+              <i class="far fa-running"></i>
             </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+              <i class="fas fa-expand-arrows-alt"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              data-widget="control-sidebar"
+              data-slide="true"
+              href="#"
+              role="button"
+            >
+              <i class="fas fa-th-large"></i>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <!-- /.navbar -->
 
-            <!-- Sidebar -->
-            <div class="sidebar">
-                <!-- Sidebar user panel (optional) -->
-                <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-                    <div class="image">
-                        <img src="{% static 'dist/img/Meli1.png' %}" class="img-circle elevation-2" alt="User Image">
-                    </div>
-                    <div class="info">
-                        <a href="#" class="d-block">Melissa</a>
-                    </div>
-                </div>
+      <!-- Main Sidebar Container -->
+      <aside class="main-sidebar sidebar-dark-primary elevation-4">
+        <!-- Brand Logo -->
+        <a href="index3.html" class="brand-link">
+          <img
+            src="{% static 'dist/img/BA1_fondo.png' %}"
+            class="brand-image img-circle elevation-3"
+            style="opacity: 0.8"
+          />
+          <span class="brand-text font-weight-light"
+            >Baxter Assistant V2.0</span
+          >
+        </a>
 
-                <!-- SidebarSearch Form -->
-                <div class="form-inline">
-                    <div class="input-group" data-widget="sidebar-search">
-                        <input class="form-control form-control-sidebar" type="search" placeholder="Search"
-                            aria-label="Search">
-                        <div class="input-group-append">
-                            <button class="btn btn-sidebar">
-                                <i class="fas fa-search fa-fw"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
+        <!-- Sidebar -->
+        <div class="sidebar">
+          <!-- Sidebar user panel (optional) -->
+          <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+            <div class="image">
+              <img
+                src="{% static 'dist/img/Meli1.png' %}"
+                class="img-circle elevation-2"
+                alt="User Image"
+              />
+            </div>
+            <div class="info">
+              <a href="#" class="d-block">Melissa</a>
+            </div>
+          </div>
 
-                <!-- Sidebar Menu -->
-                <nav class="mt-2">
-                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
-                        data-accordion="false">
-                        <!-- Add icons to the links using the .nav-icon class
+          <!-- SidebarSearch Form -->
+          <div class="form-inline">
+            <div class="input-group" data-widget="sidebar-search">
+              <input
+                class="form-control form-control-sidebar"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <div class="input-group-append">
+                <button class="btn btn-sidebar">
+                  <i class="fas fa-search fa-fw"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sidebar Menu -->
+          <nav class="mt-2">
+            <ul
+              class="nav nav-pills nav-sidebar flex-column"
+              data-widget="treeview"
+              role="menu"
+              data-accordion="false"
+            >
+              <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-                        <li class="nav-item menu-open">
-                            <a href="#" class="nav-link active">
-                                <i class="nav-icon fas fa-robot"></i>
-                                <p>
-                                    CHATBOT
-                                    <i class="right fas fa-angle-left"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="./index.html" class="nav-link">
-                                        <i class="fas fa-video nav-icon"></i>
-                                        <p>CONTROL VIDEO</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="./index2.html" class="nav-link">
-                                        <i class="far fa-file-archive nav-icon"></i>
-                                        <p>BACKLOG</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a href="pages/widgets.html" class="nav-link">
-                                <i class="nav-icon fas fa-user"></i>
-                                <p>
-                                    PERFIL
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-running"></i>
-                                <p>
-                                    LOGOUT
+              <li class="nav-item menu-open">
+                <a href="{% url 'chat:home' %}" class="nav-link active">
+                  <i class="nav-icon fas fa-robot"></i>
+                  <p>
+                    CHATBOT
+                    <i class="right fas fa-angle-left"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item" id="prueba">
+                    <a href="{% url 'streaming:index' %}" class="nav-link">
+                      <i class="fas fa-video nav-icon"></i>
+                      <p>CONTROL VIDEO</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="./index2.html" class="nav-link">
+                      <i class="far fa-file-archive nav-icon"></i>
+                      <p>BACKLOG</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a href="pages/widgets.html" class="nav-link">
+                  <i class="nav-icon fas fa-user"></i>
+                  <p>PERFIL</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fas fa-running"></i>
+                  <p>LOGOUT</p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="pages/layout/top-nav.html" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Top Navigation</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      href="pages/layout/top-nav-sidebar.html"
+                      class="nav-link"
+                    >
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Top Navigation + Sidebar</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="pages/layout/boxed.html" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Boxed</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="pages/layout/fixed-sidebar.html" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Fixed Sidebar</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      href="pages/layout/fixed-sidebar-custom.html"
+                      class="nav-link"
+                    >
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Fixed Sidebar <small>+ Custom Area</small></p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="pages/layout/fixed-topnav.html" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Fixed Navbar</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="pages/layout/fixed-footer.html" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Fixed Footer</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      href="pages/layout/collapsed-sidebar.html"
+                      class="nav-link"
+                    >
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Collapsed Sidebar</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+          <!-- /.sidebar-menu -->
+        </div>
+        <!-- /.sidebar -->
+      </aside>
 
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="pages/layout/top-nav.html" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Top Navigation</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Top Navigation + Sidebar</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="pages/layout/boxed.html" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Boxed</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="pages/layout/fixed-sidebar.html" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Fixed Sidebar</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="pages/layout/fixed-sidebar-custom.html" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Fixed Sidebar <small>+ Custom Area</small></p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="pages/layout/fixed-topnav.html" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Fixed Navbar</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="pages/layout/fixed-footer.html" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Fixed Footer</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="pages/layout/collapsed-sidebar.html" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Collapsed Sidebar</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-
-                    </ul>
-                </nav>
-                <!-- /.sidebar-menu -->
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <div class="content-header">
+          <div class="container-fluid">
+            <div class="row mb-2">
+              <div class="col-sm-6">
+                <h1 class="m-0">¡Bienvenido a Baxter Assistant!</h1>
+              </div>
+              <!-- /.col -->
+              <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                  <li class="breadcrumb-item"><a href="#">Inicio</a></li>
+                  <li class="breadcrumb-item active">Historial</li>
+                </ol>
+              </div>
+              <!-- /.col -->
             </div>
-            <!-- /.sidebar -->
-        </aside>
+            <!-- /.row -->
+          </div>
+          <!-- /.container-fluid -->
+        </div>
+        <!-- /.content-header -->
 
-        <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper">
-            <!-- Content Header (Page header) -->
-            <div class="content-header">
-                <div class="container-fluid">
-                    <div class="row mb-2">
-                        <div class="col-sm-6">
-                            <h1 class="m-0">¡Bienvenido a Baxter Assistant!</h1>
-                        </div><!-- /.col -->
-                        <div class="col-sm-6">
-                            <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-                                <li class="breadcrumb-item active">Historial</li>
-                            </ol>
-                        </div><!-- /.col -->
-                    </div><!-- /.row -->
-                </div><!-- /.container-fluid -->
+        <!-- Main content -->
+
+        <section class="content">
+          <div class="container-fluid">
+            <!-- Small boxes (Stat box) -->
+            <div class="row">
+              <div class="col-lg-3 col-6">
+                <!-- small box -->
+                <div class="small-box bg-info">
+                  <div class="inner">
+                    <h3>150</h3>
+
+                    <p>Número de operaciones</p>
+                  </div>
+                  <div class="icon">
+                    <i class="ion ion-trophy"></i>
+                  </div>
+                  <a href="#" class="small-box-footer"
+                    >Ampliar<i class="fas fa-arrow-circle-right"></i
+                  ></a>
+                </div>
+              </div>
+              <!-- ./col -->
+              <div class="col-lg-3 col-6">
+                <!-- small box -->
+                <div class="small-box bg-success">
+                  <div class="inner">
+                    <h3>53<sup style="font-size: 20px">%</sup></h3>
+
+                    <p>Porcentaje de precisión</p>
+                  </div>
+                  <div class="icon">
+                    <i class="ion ion-stats-bars"></i>
+                  </div>
+                  <a href="#" class="small-box-footer"
+                    >Ampliar<i class="fas fa-arrow-circle-right"></i
+                  ></a>
+                </div>
+              </div>
+              <!-- ./col -->
+              <div class="col-lg-3 col-6">
+                <!-- small box -->
+                <div class="small-box bg-warning">
+                  <div class="inner">
+                    <h3>2</h3>
+
+                    <p>Usuarios registrados</p>
+                  </div>
+                  <div class="icon">
+                    <i class="ion ion-person-add"></i>
+                  </div>
+                  <a href="#" class="small-box-footer"
+                    >Ampliar<i class="fas fa-arrow-circle-right"></i
+                  ></a>
+                </div>
+              </div>
+              <!-- ./col -->
+              <div class="col-lg-3 col-6">
+                <!-- small box -->
+                <div class="small-box bg-danger">
+                  <div class="inner">
+                    <h3>0</h3>
+
+                    <p>Operaciones fallidas</p>
+                  </div>
+                  <div class="icon">
+                    <i class="ion ion-pie-graph"></i>
+                  </div>
+                  <a href="#" class="small-box-footer"
+                    >Ampliar<i class="fas fa-arrow-circle-right"></i
+                  ></a>
+                </div>
+              </div>
+              <!-- ./col -->
             </div>
-            <!-- /.content-header -->
+            <!-- /.row -->
 
-            <!-- Main content -->
-            
-            <section class="content">
-                <div class="container-fluid">
-                    <!-- Small boxes (Stat box) -->
-                    <div class="row">
-                        <div class="col-lg-3 col-6">
-                            <!-- small box -->
-                            <div class="small-box bg-info">
-                                <div class="inner">
-                                    <h3>150</h3>
+            <!-- Main row -->
+            <div class="row">
+              <!-- Left col -->
+              <section class="col-lg-7">
+                <!-- Custom tabs (Charts with tabs)-->
+                <!-- INSERTAR JS DEL CHATBOT -->
+                <div class="chatElement" id="chat">
+                  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-                                    <p>Número de operaciones</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="ion ion-trophy "></i>
-                                </div>
-                                <a href="#" class="small-box-footer">Ampliar<i
-                                        class="fas fa-arrow-circle-right"></i></a>
-                            </div>
-                        </div>
-                        <!-- ./col -->
-                        <div class="col-lg-3 col-6">
-                            <!-- small box -->
-                            <div class="small-box bg-success">
-                                <div class="inner">
-                                    <h3>53<sup style="font-size: 20px">%</sup></h3>
-
-                                    <p>Porcentaje de precisión</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="ion ion-stats-bars"></i>
-                                </div>
-                                <a href="#" class="small-box-footer">Ampliar<i
-                                        class="fas fa-arrow-circle-right"></i></a>
-                            </div>
-                        </div>
-                        <!-- ./col -->
-                        <div class="col-lg-3 col-6">
-                            <!-- small box -->
-                            <div class="small-box bg-warning">
-                                <div class="inner">
-                                    <h3>2</h3>
-
-                                    <p>Usuarios registrados</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="ion ion-person-add"></i>
-                                </div>
-                                <a href="#" class="small-box-footer">Ampliar<i
-                                        class="fas fa-arrow-circle-right"></i></a>
-                            </div>
-                        </div>
-                        <!-- ./col -->
-                        <div class="col-lg-3 col-6">
-                            <!-- small box -->
-                            <div class="small-box bg-danger">
-                                <div class="inner">
-                                    <h3>0</h3>
-
-                                    <p>Operaciones fallidas</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="ion ion-pie-graph"></i>
-                                </div>
-                                <a href="#" class="small-box-footer">Ampliar<i
-                                        class="fas fa-arrow-circle-right"></i></a>
-                            </div>
-                        </div>
-                        <!-- ./col -->
-                    </div>
-                    <!-- /.row -->
-
-                    <!-- Main row -->
-                    <div class="row">
-                        <!-- Left col -->
-                        <section class="col-lg-7 ">
-                            <!-- Custom tabs (Charts with tabs)-->
-                            <!-- INSERTAR JS DEL CHATBOT -->
-                            <div class="chatElement" id='chat'>
-                                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
-                                <script>
-                                    const element = document.querySelector('.chatElement');
-                                    window.watsonAssistantChatOptions = {
-
-                                        /*
+                  <script>
+                    const element = document.querySelector(".chatElement");
+                    window.watsonAssistantChatOptions = {
+                      /*
                                         En caso de necesitar cambiar la conexión con el servicio de Watson Assistant,
                                         solo se debe cambiar el valor de las tres variables que están a continuación.
                                         Se accede desde las "integrations" del WA.
@@ -343,163 +404,174 @@
                                         
                                         */
 
-                                        integrationID: "4e0c281a-91dc-4a05-b8e7-7f315505a9b2", //conexión con el WA de Juanpa
-                                        region: "us-south",
-                                        serviceInstanceID: "ff665eb2-c524-4780-acb1-ccda0f3a51f3",//conexión con el WA de Juanpa
-                                        //-------------------CUSTOM-----------------------------------------------
-                                        // Provide the custom element.
-                                        element: element,
-                                        // Hide the close button since we want it always open.
-                                        hideCloseButton: true,
-                                        // Hide the default launcher.
-                                        showLauncher: false,
-                                        // Make the window open by default.
-                                        openChatByDefault: true,
-                                        //-------------------------------------------------------------------------
+                      integrationID: "4e0c281a-91dc-4a05-b8e7-7f315505a9b2", //conexión con el WA de Juanpa
+                      region: "us-south",
+                      serviceInstanceID: "ff665eb2-c524-4780-acb1-ccda0f3a51f3", //conexión con el WA de Juanpa
+                      //-------------------CUSTOM-----------------------------------------------
+                      // Provide the custom element.
+                      element: element,
+                      // Hide the close button since we want it always open.
+                      hideCloseButton: true,
+                      // Hide the default launcher.
+                      showLauncher: false,
+                      // Make the window open by default.
+                      openChatByDefault: true,
+                      //-------------------------------------------------------------------------
 
-                                        onLoad: function (instance) {
-                                            function handler(event) {
-                                                var prueba = event.data.context.skills;
-                                                console.log(prueba)
-                                                
-                                                str_prueba = JSON.stringify(prueba['main skill']['user_defined']);// JSON pack 
-                                                console.log(str_prueba)
+                      onLoad: function (instance) {
+                        function handler(event) {
+                          var prueba = event.data.context.skills;
+                          console.log(prueba);
 
-                                                // Put the object into storage
-                                                localStorage.setItem('response', str_prueba);
+                          str_prueba = JSON.stringify(
+                            prueba["main skill"]["user_defined"]
+                          ); // JSON pack
+                          console.log(str_prueba);
 
-                                                // Retrieve the object from storage
-                                                var retrievedObject = localStorage.getItem('response');
-                                                
-                                                $.ajax({
-                                                    headers: { "X-CSRFToken": '{{csrf_token}}' },
-                                                    url: "{% url 'chat:send' %}",
-                                                    data: {
-                                                        'json':str_prueba                                          
-                                                    },
-                                                    type: 'POST',
-                                                    success: function (response) {
-                                                        $("#importante").html(response)
-                                                    },
-                                                    error: function (xhr, textStatus, errorThrown) {
-                                                        $("#chat").html(xhr.responseText);
-                                                    }
-                                                })
-                                            }
-                                            instance.on({ type: "receive", handler: handler });
-                                            // Actually render the web chat.
-                                            instance.render()
+                          // Put the object into storage
+                          localStorage.setItem("response", str_prueba);
 
-                                        },
+                          // Retrieve the object from storage
+                          var retrievedObject =
+                            localStorage.getItem("response");
 
-                                    }
+                          $.ajax({
+                            headers: { "X-CSRFToken": "{{csrf_token}}" },
+                            url: "{% url 'chat:send' %}",
+                            data: {
+                              json: str_prueba,
+                            },
+                            type: "POST",
+                            success: function (response) {
+                              $("#importante").html(response);
+                            },
+                            error: function (xhr, textStatus, errorThrown) {
+                              $("#chat").html(xhr.responseText);
+                            },
+                          });
+                        }
+                        instance.on({ type: "receive", handler: handler });
+                        // Actually render the web chat.
+                        instance.render();
+                      },
+                    };
 
+                    setTimeout(function () {
+                      const t = document.createElement("script");
+                      t.src =
+                        "https://web-chat.global.assistant.watson.appdomain.cloud/loadWatsonAssistantChat.js";
+                      document.head.appendChild(t);
+                    });
+                  </script>
+                </div>
+                <!-- END CHATBOT -->
+                <!-- /.card -->
+              </section>
+              <!-- /.Left col -->
 
-
-
-
-
-
-                                    setTimeout(function () {
-                                        const t = document.createElement('script');
-                                        t.src = 'https://web-chat.global.assistant.watson.appdomain.cloud/loadWatsonAssistantChat.js';
-                                        document.head.appendChild(t);
-                                    });
-
-
-                                </script>
-                            </div>
-                            <!-- END CHATBOT -->
-                            <!-- /.card -->
-                        </section>
-                        <!-- /.Left col -->
-
-                        <!-- right col (We are only adding the ID to make the widgets sortable)-->
-                        <section class="col-lg-5 connectedSortable">
-                            <!-- Configuraciones -->
-                            <div class="card">
-                                <div class="card-header">
-                                    <h3 class="card-title">CONFIGURACIONES</h3>
-                                    <div class="card-tools">
-                                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                                            <i class="fas fa-minus"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="card-body p-0">
-                                    <ul class="nav nav-pills flex-column">
-                                        <!-- -------------------------------------------------- -->
-                                        <li class="nav-item">
-                                            <div id="container">
-                                                <a href="#" data-toggle="modal" data-target="#bax_home"
-                                                    class="nav-link" id="baxter_home">
-                                                    <i class="fas fa-home"></i>
-                                                    HOME
-                                                </a>
-                                            </div>
-                                        </li>
-                                        <!-- --------------------------------------------------- -->
-                                        <li class="nav-item">
-                                            <div id="container">
-                                                <a href="#" data-toggle="modal" data-target="#bax_start"
-                                                    class="nav-link" id="baxter_start">
-                                                    <i class="fas fa-play-circle"></i>
-                                                    INICIAR
-                                                </a>
-                                            </div>
-                                        </li>
-                                        <!-- --------------------------------------------------- -->
-                                        <li class="nav-item">
-                                            <div id="container">
-                                                <a href="#" data-toggle="modal" data-target="#bannerformodal1"
-                                                    class="nav-link" id="baxter_save">
-                                                    <i class="fas fa-save"></i>
-                                                    GUARDAR
-                                                </a>
-
-                                            </div>
-                                        </li>
-
-                                        <li class="nav-item active">
-                                            <div id="container">
-                                                <a href="#" data-toggle="modal" data-target="#bannerformodal"
-                                                    class="nav-link" id="baxter_off">
-                                                    <i class="fas fa-power-off"></i>
-                                                    APAGAR
-                                                </a>
-
-                                            </div>
-                                        </li>
-                                        <!-- -------------------------------------------------- -->
-
-                                    </ul>
-                                </div>
-                                <!-- /.card-body -->
-                            </div>
-                            <!-- /.card -->
-                            <div id="importante"></div>
-                        </section>
-                        <!-- right col -->
-
+              <!-- right col (We are only adding the ID to make the widgets sortable)-->
+              <section class="col-lg-5 connectedSortable">
+                <!-- Configuraciones -->
+                <div class="card">
+                  <div class="card-header">
+                    <h3 class="card-title">CONFIGURACIONES</h3>
+                    <div class="card-tools">
+                      <button
+                        type="button"
+                        class="btn btn-tool"
+                        data-card-widget="collapse"
+                      >
+                        <i class="fas fa-minus"></i>
+                      </button>
                     </div>
-                    <!-- /.row (main row) -->
-                </div><!-- /.container-fluid -->
-                
-            </section>
-            <!-- /.content -->
-        </div>
-        <!-- /.content-wrapper -->
+                  </div>
+                  <div class="card-body p-0">
+                    <ul class="nav nav-pills flex-column">
+                      <!-- -------------------------------------------------- -->
+                      <li class="nav-item">
+                        <div id="container">
+                          <a
+                            href="#"
+                            data-toggle="modal"
+                            data-target="#bax_home"
+                            class="nav-link"
+                            id="baxter_home"
+                          >
+                            <i class="fas fa-home"></i>
+                            HOME
+                          </a>
+                        </div>
+                      </li>
+                      <!-- --------------------------------------------------- -->
+                      <li class="nav-item">
+                        <div id="container">
+                          <a
+                            href="#"
+                            data-toggle="modal"
+                            data-target="#bax_start"
+                            class="nav-link"
+                            id="baxter_start"
+                          >
+                            <i class="fas fa-play-circle"></i>
+                            INICIAR
+                          </a>
+                        </div>
+                      </li>
+                      <!-- --------------------------------------------------- -->
+                      <li class="nav-item">
+                        <div id="container">
+                          <a
+                            href="#"
+                            data-toggle="modal"
+                            data-target="#bannerformodal1"
+                            class="nav-link"
+                            id="baxter_save"
+                          >
+                            <i class="fas fa-save"></i>
+                            GUARDAR
+                          </a>
+                        </div>
+                      </li>
 
+                      <li class="nav-item active">
+                        <div id="container">
+                          <a
+                            href="#"
+                            data-toggle="modal"
+                            data-target="#bannerformodal"
+                            class="nav-link"
+                            id="baxter_off"
+                          >
+                            <i class="fas fa-power-off"></i>
+                            APAGAR
+                          </a>
+                        </div>
+                      </li>
+                      <!-- -------------------------------------------------- -->
+                    </ul>
+                  </div>
+                  <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+                <div id="importante"></div>
+              </section>
+              <!-- right col -->
+            </div>
+            <!-- /.row (main row) -->
+          </div>
+          <!-- /.container-fluid -->
+        </section>
+        <!-- /.content -->
+      </div>
+      <!-- /.content-wrapper -->
 
-        <!-- Control Sidebar -->
-        <aside class="control-sidebar control-sidebar-dark">
-            <!-- Control sidebar content goes here -->
-        </aside>
-        <!-- /.control-sidebar -->
+      <!-- Control Sidebar -->
+      <aside class="control-sidebar control-sidebar-dark">
+        <!-- Control sidebar content goes here -->
+      </aside>
+      <!-- /.control-sidebar -->
     </div>
     <!-- ./wrapper -->
-
-
 
     <!-- jQuery -->
     <!-- <script src="{& static 'plugins/jquery/jquery.min.js' %}"></script> -->
@@ -507,7 +579,7 @@
     <script src="{% static 'plugins/jquery-ui/jquery-ui.min.js' %}"></script>
     <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
     <script>
-        $.widget.bridge('uibutton', $.ui.button)
+      $.widget.bridge("uibutton", $.ui.button);
     </script>
     <!-- Bootstrap 4 -->
     <script src="{% static 'plugins/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
@@ -535,84 +607,95 @@
     <!-- PETICIONES DE JS BOTONES -->
 
     <script>
-    //Configuración botones predeterminados
-    //*****************************
-    $(document).ready(function(){
-        $('#baxter_home').on('click', function(){
-            $.ajax({
-                headers: { "X-CSRFToken" : '{{ csrf_token }}' },
-                url: "{% url 'chat:send_pre' %}",
-                data: {'accion': 'iniciar'},
-                type: 'POST',
-                success: function (response) {
-                    alert('¡Ahora estoy yendo a la posición "home"!');
-                },
-                error: function (xhr, textStatus, errorThrown) { 
-                    alert('something went wrong');
-            }
+      //Configuración botones predeterminados
+      //*****************************
+      $(document).ready(function () {
+        $("#baxter_home").on("click", function () {
+          $.ajax({
+            headers: { "X-CSRFToken": "{{ csrf_token }}" },
+            url: "{% url 'chat:send_pre' %}",
+            data: { accion: "iniciar" },
+            type: "POST",
+            success: function (response) {
+              alert('¡Ahora estoy yendo a la posición "home"!');
+            },
+            error: function (xhr, textStatus, errorThrown) {
+              alert("something went wrong");
+            },
+          });
+        });
+      });
 
-        })
-    })
+      $(document).ready(function () {
+        $("#baxter_start").on("click", function () {
+          $.ajax({
+            headers: { "X-CSRFToken": "{{ csrf_token }}" },
+            url: "{% url 'chat:send_pre' %}",
+            data: { accion: "set" },
+            type: "POST",
+            success: function (response) {
+              alert("¡Ahora me encenderé!");
+            },
+            error: function (xhr, textStatus, errorThrown) {
+              alert("something went wrong");
+            },
+          });
+        });
+      });
 
-    })
-    
-    $(document).ready(function(){
-        $('#baxter_start').on('click', function () {
-            $.ajax({
-                headers: { "X-CSRFToken": '{{ csrf_token }}' },
-                url: "{% url 'chat:send_pre' %}",
-                data: { 'accion': 'set' },
-                type: 'POST',
-                success: function (response) {
-                    alert('¡Ahora me encenderé!');
-                },
-                error: function (xhr, textStatus, errorThrown) {
-                    alert('something went wrong');
-                }
-        })
-    })
+      $(document).ready(function () {
+        $("#baxter_save").on("click", function () {
+          $.ajax({
+            headers: { "X-CSRFToken": "{{ csrf_token }}" },
+            url: "{% url 'chat:send_pre' %}",
+            data: { accion: "guardar" },
+            type: "POST",
+            success: function (response) {
+              alert("Programación guardada con éxito");
+            },
+            error: function (xhr, textStatus, errorThrown) {
+              alert("something went wrong");
+            },
+          });
+        });
+      });
 
-    })
-    
-    $(document).ready(function(){
-        $('#baxter_save').on('click', function () {
-            $.ajax({
-                headers: { "X-CSRFToken": '{{ csrf_token }}' },
-                url: "{% url 'chat:send_pre' %}",
-                data: { 'accion': 'guardar' },
-                type: 'POST',
-                success: function (response) {
-                    alert('Programación guardada con éxito');
-                },
-                error: function (xhr, textStatus, errorThrown) {
-                    alert('something went wrong');
-                }
-        })
-    })
+      $(document).ready(function () {
+        $("#baxter_off").on("click", function () {
+          $.ajax({
+            headers: { "X-CSRFToken": "{{ csrf_token }}" },
+            url: "{% url 'chat:send_pre' %}",
+            data: { accion: "apagar" },
+            type: "POST",
+            success: function (response) {
+              alert("¡Hasta la próxima!");
+            },
+            error: function (xhr, textStatus, errorThrown) {
+              alert("something went wrong");
+            },
+          });
+        });
+      });
 
-    })
-    
-    $(document).ready(function(){
-        $('#baxter_off').on('click', function () {
-            $.ajax({
-                headers: { "X-CSRFToken": '{{ csrf_token }}' },
-                url: "{% url 'chat:send_pre' %}",
-                data: { 'accion': 'apagar' },
-                type: 'POST',
-                success: function (response) {
-                    alert('¡Hasta la próxima!');
-                },
-                error: function (xhr, textStatus, errorThrown) {
-                    alert('something went wrong');
-                }
-        })
-    })
+      $(document).ready(function () {
+        $("#prueba").on("click", function () {
+          console.log("click");
+          $.ajax({
+            headers: { "X-CSRFToken": "{{ csrf_token }}" },
+            url: "{% url 'chat:send_pre' %}",
+            data: { accion: "camara" },
+            type: "POST",
+            success: function (response) {
+              alert("¡Abriendo cámara!");
+            },
+            error: function (xhr, textStatus, errorThrown) {
+              alert("something went wrong");
+            },
+          });
+        });
+      });
 
-    })
-
-    //*****************************
-
+      //*****************************
     </script>
-</body>
-
+  </body>
 </html>
