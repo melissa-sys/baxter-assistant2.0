@@ -25,8 +25,7 @@ SECRET_KEY = 'ey3ttw!1(njuu3j@%$$x_4n6!=%0*8$nc7ci^#ni6z0_k=4*=q'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['34.229.118.13', 'localhost',
-                 '127.0.0.1', '54.224.71.77']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '54.205.63.125']
 
 
 # Application definition
@@ -34,7 +33,7 @@ ALLOWED_HOSTS = ['34.229.118.13', 'localhost',
 INSTALLED_APPS = [
     'chat',
     'login',
-    # 'streamapp',
+    'streamapp',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
