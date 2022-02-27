@@ -127,3 +127,6 @@ STATIC_URL = '/static/'
 
 # Configure default primary key
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
+
+# Auth redirect
+LOGIN_REDIRECT_URL = ''
