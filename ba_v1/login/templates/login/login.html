@@ -51,6 +51,7 @@
           </div>
           <div class="d-flex justify-content-center form_container">
             <form>
+              {% csrf_token %}
               <div class="input-group mb-3">
                 <div class="input-group-append">
                   <span class="input-group-text"
@@ -62,7 +63,7 @@
                   name=""
                   class="form-control input_user"
                   value=""
-                  placeholder="username"
+                  placeholder="Username"
                 />
               </div>
               <div class="input-group mb-2">
@@ -76,24 +77,12 @@
                   name=""
                   class="form-control input_pass"
                   value=""
-                  placeholder="password"
+                  placeholder="Password"
                 />
               </div>
-              <div class="form-group">
-                <div class="custom-control custom-checkbox">
-                  <input
-                    type="checkbox"
-                    class="custom-control-input"
-                    id="customControlInline"
-                  />
-                  <label class="custom-control-label" for="customControlInline"
-                    >Remember me</label
-                  >
-                </div>
-              </div>
               <div class="d-flex justify-content-center mt-3 login_container">
-                <button type="button" name="button" class="btn login_btn">
-                  Login
+                <button type="submit" name="button" class="btn login_btn">
+                  Ingresar
                 </button>
               </div>
             </form>
@@ -102,9 +91,6 @@
           <div class="mt-4">
             <div class="d-flex justify-content-center links">
               Don't have an account? <a href="#" class="ml-2">Sign Up</a>
-            </div>
-            <div class="d-flex justify-content-center links">
-              <a href="#">Forgot your password?</a>
             </div>
           </div>
         </div>
