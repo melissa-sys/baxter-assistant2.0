@@ -20,6 +20,6 @@ urlpatterns = [
     path('', include('chat.urls')),
     path('login', include('login.urls')),
     path('admin/', admin.site.urls),
-    path('video/', include('streamapp.urls')),
+    #path('video/', include('streamapp.urls')),
 
 ]
