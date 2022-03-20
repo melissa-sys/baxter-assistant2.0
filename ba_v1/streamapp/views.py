@@ -1,7 +1,8 @@
+from http.client import HTTPResponse
 from django.shortcuts import render
 from django.http.response import StreamingHttpResponse
-from streamapp.camera import VideoCamera
-from streamapp.camera import IPWebCam
+# from streamapp.camera import VideoCamera
+# from streamapp.camera import IPWebCam
 
 # Create your views here.
 
@@ -22,7 +23,7 @@ def index(request):
 
 
 def video_feed(request):
-    pass
+    return HTTPResponse('here comes the video')
     # return StreamingHttpResponse(gen(VideoCamera()), content_type='multipart/x-mixed-replace; boundary= frame')
 
 
