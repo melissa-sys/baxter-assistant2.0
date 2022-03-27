@@ -28,7 +28,7 @@ class Video(object):
         client_socket.setsockopt(
             socket.SOL_SOCKET, socket.SO_RCVBUF, BUFF_SIZE)
         host_name = socket.gethostname()
-        host_ip = '192.168.1.11'  # socket.gethostbyname(host_name)
+        host_ip = '192.168.1.60'  # socket.gethostbyname(host_name)
         print(host_ip)
         port = 9999
         message = b'Hello'
