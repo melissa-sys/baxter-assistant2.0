@@ -5,6 +5,7 @@ from . import views
 from .views import HomePage
 from .views import SetupBaxter
 from .views import Finish
+from .views import Voice
 #from .views import messageDelete
 from .viewset import MessageViewSet
 
@@ -27,4 +28,7 @@ urlpatterns = [
 
     # API urls
     path('api/', include(router.urls), name='api'),
+
+    # Prueba voz
+    path('voz/', Voice.as_view(), name='voice'),
 ]

@@ -391,17 +391,17 @@
                                         En caso de necesitar cambiar la conexión con el servicio de Watson Assistant,
                                         solo se debe cambiar el valor de las tres variables que están a continuación.
                                         Se accede desde las "integrations" del WA.
-                                        
-                                        JUANPA 
-                                        integrationID: "4e0c281a-91dc-4a05-b8e7-7f315505a9b2", 
+
+                                        JUANPA
+                                        integrationID: "4e0c281a-91dc-4a05-b8e7-7f315505a9b2",
                                         region: "us-south",
                                         serviceInstanceID: "ff665eb2-c524-4780-acb1-ccda0f3a51f3",
-                                        
+
                                         MEL
-                                        integrationID: "f94f9040-a6ca-4516-b77a-b70d265304a5", 
+                                        integrationID: "f94f9040-a6ca-4516-b77a-b70d265304a5",
                                         region: "us-south", // The region your integration is hosted in.
-                                        serviceInstanceID: "566b2572-e1fb-4866-8d2c-c7590a7ee558", 
-                                        
+                                        serviceInstanceID: "566b2572-e1fb-4866-8d2c-c7590a7ee558",
+
                                         */
 
                       integrationID: "4e0c281a-91dc-4a05-b8e7-7f315505a9b2", //conexión con el WA de Juanpa
@@ -421,12 +421,12 @@
                       onLoad: function (instance) {
                         function handler(event) {
                           var prueba = event.data.context.skills;
-                          console.log(prueba);
+                          //console.log(event);
 
                           str_prueba = JSON.stringify(
                             prueba["main skill"]["user_defined"]
                           ); // JSON pack
-                          console.log(str_prueba);
+                          //console.log(str_prueba);
 
                           // Put the object into storage
                           localStorage.setItem("response", str_prueba);
@@ -553,7 +553,23 @@
                   <!-- /.card-body -->
                 </div>
                 <!-- /.card -->
-                <div id="importante"></div>
+                <div class="row">
+                  <div id="importante"></div>
+                </div>
+                <div class="row">
+                  <div id="voz_element">
+                    <section>
+                      <h2>Transcribe from Microphone</h2>
+                      <button id="button_voice">
+                        Start Microphone Transcription
+                      </button>
+                      <button id="stop_voice">Stop</button>
+
+                      <h2>Output:</h2>
+                      <input id="output" />
+                    </section>
+                  </div>
+                </div>
               </section>
               <!-- right col -->
             </div>
@@ -603,6 +619,15 @@
     <script src="{% static 'plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js' %}"></script>
     <!-- AdminLTE App -->
     <script src="{% static 'dist/js/adminlte.js' %}"></script>
+
+    <!-- Scripts correspondientes a WatsonSpeech.SpeechToText-->
+    <script src="{% static 'dist/js/watson-speech.js' %}"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/fetch/3.6.2/fetch.min.js"
+      integrity="sha512-1Gn7//DzfuF67BGkg97Oc6jPN6hqxuZXnaTpC9P5uw8C6W4yUNj5hoS/APga4g1nO2X6USBb/rXtGzADdaVDeA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
 
     <!-- PETICIONES DE JS BOTONES -->
 
@@ -697,5 +722,49 @@
 
       //*****************************
     </script>
+
+    <!-- SCRIPT WATSON SPEECH TO TEXT -->
+    <code
+      ><script>
+        document.querySelector("#button_voice").onclick = function () {
+          fetch("{% static 'build/api/token.json' %}")
+            .then(function (response) {
+              var token = response.json();
+              return token;
+            })
+            .then(function (token) {
+              console.log(token);
+              var stream = WatsonSpeech.SpeechToText.recognizeMicrophone(
+                Object.assign(token, {
+                  // eslint-disable-line
+                  model: "es-CL_BroadbandModel",
+                  outputElement: "#output", // CSS selector or DOM Element
+                })
+              );
+
+              stream.on("error", function (err) {
+                console.log(err);
+              });
+
+              document.querySelector("#stop_voice").onclick = function () {
+                stream.stop();
+              };
+            })
+            .catch(function (error) {
+              console.log(error);
+            });
+        };
+      </script></code
+    >
+
+    <script></script>
   </body>
+
+  <script>
+    $("#stop_voice").on("click", function () {
+      var prueba = document.getElementById("output").value;
+      document.getElementById("WAC__inputContainer-TextArea").value = prueba;
+      console.log(prueba);
+    });
+  </script>
 </html>
