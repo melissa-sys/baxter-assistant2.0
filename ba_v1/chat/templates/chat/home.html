@@ -727,7 +727,7 @@
     <code
       ><script>
         document.querySelector("#button_voice").onclick = function () {
-          fetch("{% static 'build/api/token.json' %}")
+          fetch("{% static 'voice/prueba.json' %}")
             .then(function (response) {
               var token = response.json();
               return token;
