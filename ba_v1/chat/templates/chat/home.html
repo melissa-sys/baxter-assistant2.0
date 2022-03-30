@@ -553,23 +553,30 @@
                   <!-- /.card-body -->
                 </div>
                 <!-- /.card -->
-                <div class="row">
-                  <div id="importante"></div>
-                </div>
-                <div class="row">
-                  <div id="voz_element">
-                    <section>
-                      <h2>Transcribe from Microphone</h2>
-                      <button id="button_voice">
-                        Start Microphone Transcription
-                      </button>
-                      <button id="stop_voice">Stop</button>
-
-                      <h2>Output:</h2>
-                      <input id="output" />
-                    </section>
+                <div id="importante"></div>
+                
+                
+                <div class="card">
+                  <div class="card-header">
+                    MÓDULO DE VOZ
+                  </div>
+                  <div class="card-body text-center">
+                    <p class="card-text">¡Aquí puedes dar las órdenes mediante comandos de voz al Baxter!</p>
+                    <div id="voz_element">
+                      <section>                          
+                        <a class="btn btn-app bg-success" id="button_voice">
+                          <i class="fas fa-microphone"></i> Comenzar grabación
+                        </a>
+                        <a class="btn btn-app bg-warning" id="stop_voice">
+                          <i class="fas fa-stop"></i> Finalizar grabación
+                        </a>
+                        <input class="form-control" type="text" placeholder="Transcripción" id="output" disabled />
+                      </section>
+                    </div>
                   </div>
                 </div>
+                  
+                
               </section>
               <!-- right col -->
             </div>
@@ -733,7 +740,7 @@
               return token;
             })
             .then(function (token) {
-              console.log(token);
+              //console.log(token);
               var stream = WatsonSpeech.SpeechToText.recognizeMicrophone(
                 Object.assign(token, {
                   // eslint-disable-line
