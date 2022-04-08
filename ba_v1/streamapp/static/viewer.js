@@ -6,6 +6,7 @@ const viewer = {};
 async function startViewer(localView, remoteView, formValues, onStatsReport, onRemoteDataMessage) {
     viewer.localView = localView;
     viewer.remoteView = remoteView;
+    console.log(formValues.region)
 
     // Create KVS client
     const kinesisVideoClient = new AWS.KinesisVideo({
@@ -117,7 +118,7 @@ async function startViewer(localView, remoteView, formValues, onStatsReport, onR
             try {
                 viewer.localStream = await navigator.mediaDevices.getUserMedia(constraints);
                 viewer.localStream.getTracks().forEach(track => viewer.peerConnection.addTrack(track, viewer.localStream));
-                localView.srcObject = viewer.localStream;
+                // localView.srcObject = viewer.localStream;
             } catch (e) {
                 console.error('[VIEWER] Could not find webcam');
                 return;
@@ -223,9 +224,9 @@ function stopViewer() {
         viewer.peerConnectionStatsInterval = null;
     }
 
-    if (viewer.localView) {
-        viewer.localView.srcObject = null;
-    }
+    // if (viewer.localView) {
+    //     viewer.localView.srcObject = null;
+    // }
 
     if (viewer.remoteView) {
         viewer.remoteView.srcObject = null;

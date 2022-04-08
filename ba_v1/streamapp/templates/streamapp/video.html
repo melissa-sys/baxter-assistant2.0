@@ -28,33 +28,21 @@
             <h4>KVS Endpoint</h4>
             <div class="form-group">
                 <label>Region</label>
-                <input type="text" class="form-control" id="region" value="us-west-2">
-            </div>
-            <div class="form-group">
-                <label>Endpoint <small>(optional)</small></label>
-                <input type="text" class="form-control" id="endpoint" placeholder="Endpoint">
+                <input type="text" class="form-control" id="region" value="us-east-1">
             </div>
             <h4>AWS Credentials</h4>
             <div class="form-group">
                 <label>Access Key ID</label>
-                <input type="text" class="form-control" id="accessKeyId" placeholder="Access key id">
+                <input type="text" class="form-control" id="accessKeyId" placeholder="Access key id" value="AKIA5MFM7S2IJ6USBGNC" >
             </div>
             <div class="form-group">
                 <label>Secret Access Key</label>
-                <input type="password" class="form-control" id="secretAccessKey" placeholder="Secret access key">
-            </div>
-            <div class="form-group">
-                <label>Session Token <small>(optional)</small></label>
-                <input type="password" class="form-control" id="sessionToken" placeholder="Session token">
+                <input type="password" class="form-control" id="secretAccessKey" placeholder="Secret access key" value= "2S3OS6iybk2gS67A0WCRRgLUa77ytHUYAx70iIOR">
             </div>
             <h4>Signaling Channel</h4>
             <div class="form-group">
                 <label>Channel Name</label>
-                <input type="text" class="form-control" id="channelName" placeholder="Channel">
-            </div>
-            <div class="form-group">
-                <label>Client Id <small>(optional)</small></label>
-                <input type="text" class="form-control" id="clientId" placeholder="Client id">
+                <input type="text" class="form-control" id="channelName" placeholder="Channel" value="nombre_cualquiera">
             </div>
             <h4>Tracks</h4>
             <p><small>Control which media types are transmitted to the remote client.</small></p>
@@ -113,45 +101,12 @@
             </div>
         </form>
 
-        <div id="master" class="d-none">
-            <h2>Master</h2>
-            <div class="row">
-                <div class="col">
-                    <h5>Master Section</h5>
-                    <div class="video-container"><video class="local-view" autoplay playsinline controls muted /></div>
-                </div>
-                <div class="col">
-                    <h5>Viewer Return Channel</h5>
-                    <div class="video-container"><video class="remote-view" autoplay playsinline controls /></div>
-                </div>
-            </div>
-            <div class="row datachannel">
-                <div class="col">
-                    <div class="form-group">
-                      <textarea type="text" class="form-control local-message" placeholder="DataChannel Message"> </textarea>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card bg-light mb-3">
-                        <pre class="remote-message card-body text-monospace preserve-whitespace"></pre>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <span class="send-message datachannel">
-                  <button type="button" class="btn btn-primary">Send DataChannel Message</button>
-                </span>
-                <button id="stop-master-button" type="button" class="btn btn-primary">Stop Master</button>
-            </div>
-        </div>
+        
 
         <div id="viewer" class="d-none">
             <h2>Viewer</h2>
             <div class="row">
-                <div class="col">
-                    <h5>Return Channel</h5>
-                    <div class="video-container"><video class="local-view" autoplay playsinline controls muted /></div>
-                </div>
+                
                 <div class="col">
                     <h5>From Master</h5>
                     <div class="video-container"><video class="remote-view" autoplay playsinline controls /></div>
