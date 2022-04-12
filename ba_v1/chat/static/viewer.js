@@ -6,7 +6,8 @@ const viewer = {};
 async function startViewer(localView, remoteView, formValues, onStatsReport, onRemoteDataMessage) {
     viewer.localView = localView;
     viewer.remoteView = remoteView;
-    console.log(formValues.region)
+    console.log(formValues.region);
+    console.log(formValues.channelName)
 
     // Create KVS client
     const kinesisVideoClient = new AWS.KinesisVideo({
