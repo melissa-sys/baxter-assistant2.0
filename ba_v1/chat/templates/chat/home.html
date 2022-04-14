@@ -155,7 +155,7 @@
               />
             </div>
             <div class="info">
-              <a href="#" class="d-block">Melissa</a>
+              <a href="#" class="d-block">{{ request.user.username }}</a>
             </div>
           </div>
 
@@ -294,7 +294,7 @@
           <div class="container-fluid">
             <div class="row mb-2">
               <div class="col-sm-6">
-                <h1 class="m-0">¡Bienvenido a Baxter Assistant!</h1>
+                <h1 class="m-0">¡Bienvenido a Baxter Assistant, {{ request.user.username }}!</h1>
               </div>
               <!-- /.col -->
               <div class="col-sm-6">

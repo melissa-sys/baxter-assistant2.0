@@ -1,29 +1,23 @@
 #from _typeshed import Self
-from django.shortcuts import redirect, render
+from django.shortcuts import redirect
 
-from django.http import JsonResponse
 from django.http import HttpResponse
-from django.http import HttpResponseRedirect
-from django.urls import reverse_lazy
+
+from django.views.generic import View
+from django.views.generic import TemplateView
+
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 import json
 from .models import Message
 
-from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
-
-from django.views.generic import TemplateView
-from django.views.generic import RedirectView
-from django.views.generic import View
-
-from django.contrib.auth.mixins import LoginRequiredMixin
-
 
 # Create your views here.
 
 
-class HomePage(TemplateView):
+class HomePage(LoginRequiredMixin, TemplateView):
     template_name = 'chat/home.html'
     redirect_field_name = 'redirect_to'
 
