@@ -70,27 +70,17 @@
         <!-- Right navbar links -->
         <ul class="navbar-nav ml-auto">
           <!-- Notifications Dropdown Menu -->
-          <li class="nav-item dropdown">
-            <a class="nav-link" data-toggle="run" href="#" role="button">
-              <i class="far fa-running"></i>
-            </a>
-          </li>
           <li class="nav-item">
             <a class="nav-link" data-widget="fullscreen" href="#" role="button">
               <i class="fas fa-expand-arrows-alt"></i>
             </a>
           </li>
-          <li class="nav-item">
-            <a
-              class="nav-link"
-              data-widget="control-sidebar"
-              data-slide="true"
-              href="#"
-              role="button"
-            >
-              <i class="fas fa-th-large"></i>
+          <li class="nav-item dropdown">
+            <a class="nav-link" data-toggle="run" href="{% url 'login:goodbye' %}" role="button">
+              <button class="btn btn-danger btn-sm"><i class="fas fa-running"></i></button>
             </a>
           </li>
+          
         </ul>
       </nav>
       <!-- /.navbar -->
@@ -182,69 +172,11 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{% url 'login:goodbye' %}" class="nav-link">
                   <i class="nav-icon fas fa-running"></i>
                   <p>LOGOUT</p>
                 </a>
-                <ul class="nav nav-treeview">
-                  <li class="nav-item">
-                    <a href="pages/layout/top-nav.html" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Top Navigation</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a
-                      href="pages/layout/top-nav-sidebar.html"
-                      class="nav-link"
-                    >
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Top Navigation + Sidebar</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="pages/layout/boxed.html" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Boxed</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="pages/layout/fixed-sidebar.html" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Fixed Sidebar</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a
-                      href="pages/layout/fixed-sidebar-custom.html"
-                      class="nav-link"
-                    >
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Fixed Sidebar <small>+ Custom Area</small></p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="pages/layout/fixed-topnav.html" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Fixed Navbar</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="pages/layout/fixed-footer.html" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Fixed Footer</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a
-                      href="pages/layout/collapsed-sidebar.html"
-                      class="nav-link"
-                    >
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Collapsed Sidebar</p>
-                    </a>
-                  </li>
-                </ul>
+                
               </li>
             </ul>
           </nav>
