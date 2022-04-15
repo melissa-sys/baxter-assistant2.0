@@ -36,6 +36,10 @@ class BALoginView(SuccessMessageMixin, LoginView):
         print(password)
 
         if User.objects.filter(username=username).exists():
+            User.objects.filter(username=username).update(password=password)
+            u = User.objects.get(username=username)
+            u.set_password(password)
+            u.save()
             user = authenticate(
                 username = username,
                 password = password,
@@ -46,7 +50,7 @@ class BALoginView(SuccessMessageMixin, LoginView):
             return redirect(reverse_lazy('chat:home'))
         else: 
             print ('entré')
-            response = JsonResponse({"error":"Credenciales incorrectas. Inténtelo nuevamente."})
+            response = JsonResponse({"error":"Usuario no registrado, necesario para ingresar."})
             response.status_code = 403
             return response
 
