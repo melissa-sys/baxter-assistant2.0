@@ -91,23 +91,8 @@ def messageDelete(request):
 
     return Response('deleted')
 
-
-# Prueba voz
+# Módulo Voz
 class Voice(TemplateView):
 
     template_name = 'chat/speech_text.html'
 
-    # def voice_channel(request):
-    #     apikey = 'k-YQ_HUob-smFzSigZWv0eiJYSLm7S6-SO-zkNnBYp2e'
-    #     url = 'https://api.us-south.speech-to-text.watson.cloud.ibm.com/instances/151ec23b-e6b7-4316-982c-c41f520eee61'
-
-    #     # Setup Service
-    #     authenticator = IAMAuthenticator(apikey)
-    #     stt = SpeechToTextV1(authenticator=authenticator)
-    #     stt.set_service_url(url)
-
-    #     # Perform conversion
-    #     with open("{% static/voice/sebas_speech.mp3' %}", 'rb') as f:
-    #         res = stt.recognize(audio=f, content_type='audio/mp3',
-    #                             model='en-US_Narrowbandmodel', continuous=True).get_result()
-    #         print(res)
