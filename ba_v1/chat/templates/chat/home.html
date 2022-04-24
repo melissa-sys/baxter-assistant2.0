@@ -549,6 +549,11 @@
               <!-- right col -->
             </div>
             <!-- /.row (main row) -->
+            <div class="row">
+              <section>
+                <input id="coordenadas" class="btn btn-primary" type="submit" value="Coordenadas">
+              </section>
+            </div>
           </div>
           <!-- /.container-fluid -->
         </section>
@@ -700,7 +705,23 @@
           });
         });
       });
-
+      
+      $(document).ready(function () {
+        $("#coordenadas").on("click", function () {
+          console.log("click");
+          $.ajax({
+            headers: { "X-CSRFToken": "{{ csrf_token }}" },
+            url: "{% url 'chat:coordenadas' %}",
+            type: "POST",
+            success: function (response) {
+              alert(response);
+            },
+            error: function (xhr, textStatus, errorThrown) {
+              alert("something went wrong");
+            },
+          });
+        });
+      });
       //*****************************
     </script>
 

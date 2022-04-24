@@ -1,4 +1,5 @@
 #from _typeshed import Self
+import os
 from django.shortcuts import redirect
 
 from django.http import HttpResponse
@@ -13,6 +14,8 @@ from .models import Message
 
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
+
+from django.conf import settings
 
 # Create your views here.
 
@@ -96,3 +99,13 @@ class Voice(TemplateView):
 
     template_name = 'chat/speech_text.html'
 
+def datosRequest(request):
+    path = os.path.dirname(os.path.join(settings.BASE_DIR, 'chat', 'static', 'dist'))
+    file_name = 'datos.txt'
+    datos = os.path.join(path,file_name)
+    datos_usuario = open(datos, 'r')
+    with datos_usuario as file:
+        data = file.readlines()
+        context = data        
+        #return render(request,myapp/mytemplate.html,context)
+        return HttpResponse(context)

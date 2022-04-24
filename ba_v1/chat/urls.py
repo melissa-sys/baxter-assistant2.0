@@ -31,4 +31,7 @@ urlpatterns = [
 
     # Prueba voz
     path('voz/', Voice.as_view(), name='voice'),
+
+    # Datos robot
+    path('coords/', views.datosRequest, name='coordenadas'),
 ]
