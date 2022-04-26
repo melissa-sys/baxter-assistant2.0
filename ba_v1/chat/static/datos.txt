@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 {'accion': 'apagar', 'confirmacion': 'True', 'prueba': 'True'}
+=======
+{'accion': 'apagar', 'confirmacion': 'True'} 
+>>>>>>> d2da8183a25b1373effeedc9a25532808abd995d
