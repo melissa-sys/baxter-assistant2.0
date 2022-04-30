@@ -250,21 +250,6 @@
             <!-- Small boxes (Stat box) -->
             <div class="row">
               <div class="col-12 col-sm-6 col-md-2">
-                <div class="info-box">
-                  <span class="info-box-icon bg-info elevation-1"><i class="fas fa-home"></i></span>
-                  <div class="info-box-content">
-                    <a href="#"
-                    data-toggle="modal"
-                    data-target="#bax_home"
-                    class="stretched-link"
-                    id="baxter_home" style="text-align: center; font-family: 'Ubuntu', sans-serif;" ><h5>Home </h5></a>
-                  </div>
-                  <!-- /.info-box-content -->
-                </div>
-                <!-- /.info-box -->
-              </div>
-              <!-- /.col -->
-              <div class="col-12 col-sm-6 col-md-2">
                 <div class="info-box mb-3">
                   <span class="info-box-icon bg-success elevation-1"><i class="fas fa-play-circle"></i></span>
     
@@ -279,25 +264,25 @@
                 </div>
                 <!-- /.info-box -->
               </div>
-              <!-- /.col -->    
-              <!-- fix for small devices only -->
-              <div class="clearfix hidden-md-up"></div>    
+              <!-- /.col --> 
               <div class="col-12 col-sm-6 col-md-2">
-                <div class="info-box mb-3">
-                  <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-save"></i></span>
-    
+                <div class="info-box">
+                  <span class="info-box-icon bg-info elevation-1"><i class="fas fa-home"></i></span>
                   <div class="info-box-content">
-                    <a  href="#"
+                    <a href="#"
                     data-toggle="modal"
-                    data-target="#bannerformodal1"
-                    id="baxter_save"
+                    data-target="#bax_home"
                     class="stretched-link"
-                    style="text-align: center; font-family: 'Ubuntu', sans-serif;" ><h5>Guardar</h5></a>
+                    id="baxter_home" style="text-align: center; font-family: 'Ubuntu', sans-serif;" ><h5>Home </h5></a>
                   </div>
                   <!-- /.info-box-content -->
                 </div>
                 <!-- /.info-box -->
               </div>
+              <!-- /.col -->
+                 
+              <!-- fix for small devices only -->
+              <div class="clearfix hidden-md-up"></div>    
               <!-- /.col -->
               
               <div class="col-12 col-sm-6 col-md-2">
@@ -317,7 +302,7 @@
                 <!-- /.info-box -->
               </div>              
               <!-- /.col -->
-              <div class="col-12 col-sm-6 col-md-4">
+              <div class="col-12 col-sm-6 col-md-6">
                 <div class="info-box mb-3" id="voz_element">
                   <div class="col-3">
                     <a class="btn  bg-success btn-sm" id="button_voice">
@@ -624,7 +609,7 @@
           $.ajax({
             headers: { "X-CSRFToken": "{{ csrf_token }}" },
             url: "{% url 'chat:send_pre' %}",
-            data: { accion: "iniciar" },
+            data: { accion: "set" },
             type: "POST",
             success: function (response) {
               alert('¡Ahora estoy yendo a la posición "home"!');
@@ -641,7 +626,7 @@
           $.ajax({
             headers: { "X-CSRFToken": "{{ csrf_token }}" },
             url: "{% url 'chat:send_pre' %}",
-            data: { accion: "set" },
+            data: { accion: "iniciar" },
             type: "POST",
             success: function (response) {
               alert("¡Ahora me encenderé!");
