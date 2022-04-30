@@ -150,21 +150,7 @@
           </div>
 
           <!-- SidebarSearch Form -->
-          <div class="form-inline">
-            <div class="input-group" data-widget="sidebar-search">
-              <input
-                class="form-control form-control-sidebar"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-              <div class="input-group-append">
-                <button class="btn btn-sidebar">
-                  <i class="fas fa-search fa-fw"></i>
-                </button>
-              </div>
-            </div>
-          </div>
+          
 
           <!-- Sidebar Menu -->
           <nav class="mt-2">
@@ -176,28 +162,13 @@
             >
               <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-              <li class="nav-item menu-open">
-                <a href="{% url 'chat:home' %}" class="nav-link active">
+              <li class="nav-item">
+                <a href="{% url 'chat:home' %}" class="nav-link ">
                   <i class="nav-icon fas fa-robot"></i>
                   <p>
-                    CHATBOT
-                    <i class="right fas fa-angle-left"></i>
+                    ASISTENTE VIRTUAL
                   </p>
                 </a>
-                <ul class="nav nav-treeview">
-                  <li class="nav-item" id="prueba">
-                    <a href="{% url 'streaming:index' %}" class="nav-link">
-                      <i class="fas fa-video nav-icon"></i>
-                      <p>CONTROL VIDEO</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="./index2.html" class="nav-link">
-                      <i class="far fa-file-archive nav-icon"></i>
-                      <p>BACKLOG</p>
-                    </a>
-                  </li>
-                </ul>
               </li>
               <li class="nav-item">
                 <a href="pages/widgets.html" class="nav-link">
